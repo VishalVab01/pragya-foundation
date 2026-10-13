@@ -174,3 +174,15 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
 .ah-focus-feature h3{max-width:620px;margin-top:11px;font-size:clamp(27px,2.6vw,48px);line-height:1.12;letter-spacing:-.035em}
 @media(max-width:1050px){.ah-standfor-card{width:calc(100% - 100px)}}
 @media(max-width:600px){.ah-standfor{height:auto;min-height:670px;padding:62px 18px 100px}.ah-standfor-card{width:100%;min-height:0;grid-template-columns:1fr;gap:9px;padding:11px;border-radius:14px}.ah-focus-list{padding:13px 9px 5px}.ah-focus-list h3{font-size:20px;margin-bottom:10px}.ah-focus-list button{min-height:54px;font-size:15px;gap:12px}.ah-focus-list button>span{width:40px;height:40px}.ah-focus-list button>span svg{width:20px;height:20px}.ah-focus-feature{height:auto;min-height:215px}.ah-focus-feature>div{top:auto;bottom:16px;left:17px;right:17px}.ah-focus-feature h3{font-size:22px}.ah-wave-ribbon{width:155%;left:-28%;height:100%}.ah-wave-band{stroke-width:63}.ah-wave-text{font-size:19px}}
+
+/* Keep the ribbon's curve proportional and give its text a gentle ticker motion. */
+.ah-wave-ribbon-mobile{display:none}
+.ah-wave-ribbon-desktop{display:block}
+.ah-wave-band{stroke-width:78}
+.ah-wave-text{font-size:22px}
+@media(max-width:600px){
+  .ah-wave-ribbon-desktop{display:none}
+  .ah-wave-ribbon-mobile{display:block;inset:auto 0 -15px;width:100%;height:100%;}
+  .ah-wave-band{stroke-width:52}
+  .ah-wave-text{font-size:15px;letter-spacing:-.02em}
+}

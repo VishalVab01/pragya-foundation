@@ -1,5 +1,6 @@
-import { useState, type FormEvent } from 'react';
+import { useLayoutEffect, useRef, useState, type FormEvent } from 'react';
 import { ArrowRight, ArrowUpRight, Check, Plus, Droplets, HeartPulse, Leaf, UsersRound } from 'lucide-react';
+import { gsap } from 'gsap';
 import './HomePage.css';
 import communityWork from './assets/community-work.jpeg';
 import womenOutreach from './assets/women-outreach.jpeg';
@@ -48,6 +49,11 @@ const faqs = [
 export default function HomePage() {
   const [activeFocus, setActiveFocus] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const ribbonTextRefs = useRef<SVGTextPathElement[]>([]);
+  useLayoutEffect(() => {
+    const tween = gsap.to(ribbonTextRefs.current, { attr: { startOffset: '-28%' }, duration: 22, ease: 'none', repeat: -1 });
+    return () => { tween.kill(); };
+  }, []);
   function sendVolunteerEnquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const body = [...new FormData(event.currentTarget).entries()].map(([key, value]) => `${key}: ${value}`).join('\n');
@@ -81,10 +87,15 @@ export default function HomePage() {
         <div className="ah-focus-list"><h3>What We Stand For</h3>{focusAreas.map(({ title, icon: Icon }, index) => <button className={activeFocus === index ? 'active' : ''} key={title} onClick={() => setActiveFocus(index)}><span><Icon size={20}/></span>{title}</button>)}</div>
         <div className="ah-focus-feature"><img src={[communityWork, womenOutreach, projectOne, projectTwo][activeFocus]} alt="Pragya Foundation community work"/><div><span>PRAGYA FOUNDATION</span><h3>{focusAreas[activeFocus].copy}</h3></div></div>
       </div>
-      <svg className="ah-wave-ribbon" viewBox="0 0 1440 860" preserveAspectRatio="none" aria-hidden="true">
-        <defs><path id="pragya-wave-path" d="M -100 830 C 180 830 340 785 550 700 C 760 615 880 490 1080 445 C 1240 410 1345 455 1540 470"/></defs>
-        <path className="ah-wave-band" d="M -100 830 C 180 830 340 785 550 700 C 760 615 880 490 1080 445 C 1240 410 1345 455 1540 470"/>
-        <text className="ah-wave-text"><textPath href="#pragya-wave-path" startOffset="0">For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;</textPath></text>
+      <svg className="ah-wave-ribbon ah-wave-ribbon-desktop" viewBox="0 0 1920 860" preserveAspectRatio="none" aria-hidden="true">
+        <defs><path id="pragya-wave-path-desktop" d="M -160 850 C 250 850 430 800 700 690 C 970 580 1130 475 1410 445 C 1630 422 1800 465 2080 480"/></defs>
+        <path className="ah-wave-band" d="M -160 850 C 250 850 430 800 700 690 C 970 580 1130 475 1410 445 C 1630 422 1800 465 2080 480"/>
+        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[0] = node; }} href="#pragya-wave-path-desktop" startOffset="0">For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;</textPath></text>
+      </svg>
+      <svg className="ah-wave-ribbon ah-wave-ribbon-mobile" viewBox="0 0 600 670" preserveAspectRatio="none" aria-hidden="true">
+        <defs><path id="pragya-wave-path-mobile" d="M -100 645 C 60 645 125 600 205 535 C 300 458 375 426 700 430"/></defs>
+        <path className="ah-wave-band" d="M -100 645 C 60 645 125 600 205 535 C 300 458 375 426 700 430"/>
+        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[1] = node; }} href="#pragya-wave-path-mobile" startOffset="0">For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;</textPath></text>
       </svg>
     </section>
 
