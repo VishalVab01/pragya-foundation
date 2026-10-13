@@ -61,8 +61,9 @@ export default function HomePage() {
   const mainRef = useRef<HTMLElement>(null);
   const ribbonTextRefs = useRef<SVGTextPathElement[]>([]);
   useLayoutEffect(() => {
-    const tween = gsap.to(ribbonTextRefs.current, { attr: { startOffset: '-80%' }, duration: 24, ease: 'none', repeat: -1 });
-    return () => { tween.kill(); };
+    const standardRibbons = gsap.to(ribbonTextRefs.current.slice(0, 4), { attr: { startOffset: '-80%' }, duration: 24, ease: 'none', repeat: -1 });
+    const volunteerRibbon = gsap.to(ribbonTextRefs.current.slice(4), { attr: { startOffset: '-80%' }, duration: 42, ease: 'none', repeat: -1 });
+    return () => { standardRibbons.kill(); volunteerRibbon.kill(); };
   }, []);
   useLayoutEffect(() => {
     const root = mainRef.current;
