@@ -118,7 +118,16 @@ export default function HomePage() {
     <section className="ah-impacts" id="impact">
       <header className="ah-section-heading"><div><span className="ah-badge">Our Impact</span><h2>Changes We Proudly Made</h2></div><p>Progress built through local partnerships, practical solutions, and the commitment of communities.</p></header>
       <div className="ah-impact-grid">{impacts.map((item) => <article key={item.title}><img src={item.image} alt="Pragya Foundation community program"/><span><ArrowUpRight size={17}/></span><h3>{item.title}</h3></article>)}</div>
-      <div className="ah-impact-ticker">Trusted by communities&nbsp; · &nbsp;Proven by impact&nbsp; · &nbsp;Together for a better future&nbsp; · &nbsp;Trusted by communities&nbsp; · &nbsp;Proven by impact</div>
+      <svg className="ah-impact-ribbon ah-impact-ribbon-desktop" viewBox="0 0 1920 240" preserveAspectRatio="none" aria-hidden="true">
+        <defs><path id="pragya-impact-wave-desktop" d="M -150 230 C 250 230 440 210 690 172 C 940 134 1120 68 1390 42 C 1620 20 1800 38 2070 66"/></defs>
+        <path className="ah-wave-band" d="M -150 230 C 250 230 440 210 690 172 C 940 134 1120 68 1390 42 C 1620 20 1800 38 2070 66"/>
+        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[2] = node; }} href="#pragya-impact-wave-desktop" startOffset="0">Trusted by communities&nbsp; · &nbsp;Proven by impact&nbsp; · &nbsp;Together for a better future&nbsp; · &nbsp;Trusted by communities&nbsp; · &nbsp;Proven by impact&nbsp; · &nbsp;Together for a better future&nbsp; · &nbsp;Trusted by communities&nbsp; · &nbsp;</textPath></text>
+      </svg>
+      <svg className="ah-impact-ribbon ah-impact-ribbon-mobile" viewBox="0 0 430 210" preserveAspectRatio="none" aria-hidden="true">
+        <defs><path id="pragya-impact-wave-mobile" d="M -65 200 C 90 200 145 183 205 145 C 270 105 335 45 490 38"/></defs>
+        <path className="ah-wave-band" d="M -65 200 C 90 200 145 183 205 145 C 270 105 335 45 490 38"/>
+        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[3] = node; }} href="#pragya-impact-wave-mobile" startOffset="0">Trusted by communities&nbsp; · &nbsp;Proven by impact&nbsp; · &nbsp;Together for a better future&nbsp; · &nbsp;Trusted by communities&nbsp; · &nbsp;</textPath></text>
+      </svg>
     </section>
 
     <section className="ah-recognitions" id="recognition">
