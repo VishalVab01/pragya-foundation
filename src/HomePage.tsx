@@ -116,26 +116,21 @@ export default function HomePage() {
         const mediaCopy = mediaStage.querySelector<HTMLElement>('.ah-media-copy');
         const stageWidth = mediaStage.clientWidth;
         const stageHeight = mediaStage.clientHeight;
-        const orbit = [
-          { x: 0, y: -stageHeight * 0.34 },
-          { x: stageWidth * 0.31, y: -stageHeight * 0.25 },
-          { x: stageWidth * 0.39, y: 0 },
-          { x: stageWidth * 0.31, y: stageHeight * 0.25 },
-          { x: 0, y: stageHeight * 0.37 },
-          { x: -stageWidth * 0.31, y: stageHeight * 0.25 },
-          { x: -stageWidth * 0.39, y: 0 },
-          { x: -stageWidth * 0.31, y: -stageHeight * 0.25 },
-        ];
+        const orbitRadius = Math.min(stageWidth * 0.38, stageHeight * 0.4);
+        const orbit = mediaCards.map((_, index) => {
+          const angle = index * Math.PI / 4;
+          return { x: Math.sin(angle) * orbitRadius, y: -Math.cos(angle) * orbitRadius };
+        });
         gsap.set(mediaCards, { x: 0, y: 0, scale: 0.12, autoAlpha: 0 });
         gsap.set(mediaCards[0], { scale: 1, autoAlpha: 1 });
         const mediaTimeline = gsap.timeline({
-          scrollTrigger: { trigger: mediaStage, start: 'top top+=74', end: '+=1500', pin: true, pinReparent: true, scrub: 1, anticipatePin: 1 },
+          scrollTrigger: { trigger: mediaStage, start: 'top top+=125', end: '+=1500', pin: true, pinReparent: true, scrub: 1, anticipatePin: 1 },
         });
-        mediaTimeline.to(mediaCards[0], { ...orbit[0], scale: 0.82, duration: 0.72, ease: 'power3.out' }, 0.1);
+        mediaTimeline.to(mediaCards[0], { ...orbit[0], scale: 1, duration: 0.72, ease: 'power3.out' }, 0.1);
         mediaCards.slice(1).forEach((card, index) => {
           mediaTimeline.to(card, { ...orbit[index + 1], scale: 1, autoAlpha: 1, duration: 0.62, ease: 'power3.out' }, 0.12 + index * 0.065);
         });
-        if (mediaCopy) mediaTimeline.fromTo(mediaCopy, { autoAlpha: 0, y: 24, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: 'power2.out' }, 0.54);
+        if (mediaCopy) mediaTimeline.fromTo(mediaCopy, { autoAlpha: 0, y: 24, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.48, ease: 'power2.out' }, 1.16);
       }
       revealGroup('.ah-faq .ah-centered-heading > *', { y: 28 }, '.ah-faq .ah-centered-heading', 0.12);
       revealGroup('.ah-faq-list article', { x: 26 }, '.ah-faq-list', 0.08);
