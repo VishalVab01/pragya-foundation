@@ -121,7 +121,7 @@ html body .site-header .nav-dropdown{list-style:none}
 html body .site-header .nav-cta{height:42px;min-height:42px;padding:0 18px;border-radius:10px;background:#16506b;color:#fff;font-size:14px;font-weight:600}
 html body .site-header .menu-toggle{display:none}
 html body .footer.shell{width:min(1160px,calc(100% - 80px));max-width:none;margin:0 auto;padding:66px 0 25px;border-top:1px solid #edf0ef}
-html body .footer .footer-main{grid-template-columns:1.1fr 1fr 1fr 1.2fr;gap:45px;padding-bottom:48px}
+html body .footer .footer-main{grid-template-columns:1.1fr 1fr 1fr 1.2fr;gap:45px;padding-bottom:22px}
 html body .footer .footer-intro{display:flex;flex-direction:column;align-items:flex-start;gap:0}
 html body .footer .footer-brand{margin:0 0 15px;color:#234554;font-size:23px;font-weight:700;letter-spacing:-.05em}
 html body .footer .footer-intro>p{margin:0;color:#758188;font-size:14px;line-height:1.65}
