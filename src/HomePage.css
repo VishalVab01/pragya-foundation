@@ -186,3 +186,18 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
   .ah-wave-band{stroke-width:52}
   .ah-wave-text{font-size:15px;letter-spacing:-.02em}
 }
+
+/* Match the reference's compact floating panel and single broad sweep. */
+@media(min-width:601px){
+  .ah-standfor-card{width:min(1080px,calc(100% - 440px));}
+  .ah-wave-band{stroke-width:94px;}
+}
+@media(max-width:600px){
+  .ah-standfor{min-height:780px;padding:56px 18px 92px;}
+  .ah-standfor-card{width:calc(100% - 48px);min-height:620px;align-content:start;gap:10px;padding:12px;}
+  .ah-focus-list button{min-height:58px;}
+  .ah-focus-feature{min-height:330px;}
+  .ah-wave-ribbon-mobile{inset:auto 0 -6px;width:100%;height:100%;}
+  .ah-wave-band{stroke-width:55px;}
+  .ah-wave-text{font-size:17px;}
+}

@@ -92,9 +92,9 @@ export default function HomePage() {
         <path className="ah-wave-band" d="M -160 850 C 250 850 430 800 700 690 C 970 580 1130 475 1410 445 C 1630 422 1800 465 2080 480"/>
         <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[0] = node; }} href="#pragya-wave-path-desktop" startOffset="0">For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;</textPath></text>
       </svg>
-      <svg className="ah-wave-ribbon ah-wave-ribbon-mobile" viewBox="0 0 600 670" preserveAspectRatio="none" aria-hidden="true">
-        <defs><path id="pragya-wave-path-mobile" d="M -100 645 C 60 645 125 600 205 535 C 300 458 375 426 700 430"/></defs>
-        <path className="ah-wave-band" d="M -100 645 C 60 645 125 600 205 535 C 300 458 375 426 700 430"/>
+      <svg className="ah-wave-ribbon ah-wave-ribbon-mobile" viewBox="0 0 430 670" preserveAspectRatio="none" aria-hidden="true">
+        <defs><path id="pragya-wave-path-mobile" d="M -65 660 C 90 660 145 632 205 575 C 270 513 335 465 490 460"/></defs>
+        <path className="ah-wave-band" d="M -65 660 C 90 660 145 632 205 575 C 270 513 335 465 490 460"/>
         <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[1] = node; }} href="#pragya-wave-path-mobile" startOffset="0">For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;</textPath></text>
       </svg>
     </section>
