@@ -49,7 +49,7 @@ const impactRibbonText = Array(10).fill('Trusted by communities · Proven by imp
 const volunteerRibbonText = Array(24).fill('Join Pragya Foundation').join(' · ');
 const volunteerWavePath = 'M -300.0,150.0 L -287.5,156.8 L -275.0,163.8 L -262.5,170.6 L -250.0,177.4 L -237.5,184.0 L -225.0,190.6 L -212.5,196.7 L -199.1,203.1 L -186.6,209.0 L -174.1,214.6 L -161.6,220.1 L -149.1,225.3 L -136.6,230.3 L -124.1,234.8 L -111.6,238.9 L -99.1,242.8 L -85.7,246.4 L -73.2,249.6 L -60.7,252.3 L -48.2,254.6 L -35.7,256.6 L -23.2,258.0 L -10.7,259.1 L 1.8,259.8 L 14.3,260.0 L 27.7,259.8 L 40.2,259.1 L 52.7,258.0 L 65.2,256.6 L 77.7,254.6 L 90.2,252.3 L 102.7,249.6 L 115.2,246.4 L 128.6,242.8 L 141.1,238.9 L 153.6,234.8 L 166.1,230.3 L 178.6,225.3 L 191.1,220.1 L 203.6,214.6 L 216.1,209.0 L 228.6,203.1 L 242.1,196.7 L 254.6,190.6 L 267.0,184.0 L 279.5,177.4 L 292.0,170.6 L 304.5,163.8 L 317.0,156.8 L 329.5,150.0 L 342.0,143.2 L 355.5,136.2 L 368.0,129.4 L 380.5,122.6 L 393.0,116.0 L 405.4,109.4 L 417.9,103.3 L 430.4,96.9 L 442.9,91.0 L 455.4,85.4 L 468.9,79.9 L 481.4,74.7 L 493.9,69.7 L 506.4,65.2 L 518.9,61.1 L 531.4,57.2 L 543.8,53.6 L 556.3,50.4 L 568.8,47.7 L 582.3,45.4 L 594.8,43.4 L 607.3,42.0 L 619.8,40.9 L 632.3,40.2 L 644.8,40.0 L 657.3,40.2 L 669.7,40.9 L 683.2,42.0 L 695.7,43.4 L 708.2,45.4 L 720.7,47.7 L 733.2,50.4 L 745.7,53.6 L 758.2,57.2 L 770.7,61.1 L 783.2,65.2 L 796.6,69.7 L 809.1,74.7 L 821.6,79.9 L 834.1,85.4 L 846.6,91.0 L 859.1,96.9 L 871.6,103.3 L 884.1,109.4 L 896.6,116.0 L 910.0,122.6 L 922.5,129.4 L 935.0,136.2 L 947.5,143.2 L 960.0,150.0 L 972.5,156.8 L 985.0,163.8 L 997.5,170.6 L 1010.0,177.4 L 1023.4,184.0 L 1035.9,190.6 L 1048.4,196.7 L 1060.9,203.1 L 1073.4,209.0 L 1085.9,214.6 L 1098.4,220.1 L 1110.9,225.3 L 1123.4,230.3 L 1136.8,234.8 L 1149.3,238.9 L 1161.8,242.8 L 1174.3,246.4 L 1186.8,249.6 L 1199.3,252.3 L 1211.8,254.6 L 1224.3,256.6 L 1236.8,258.0 L 1250.3,259.1 L 1262.7,259.8 L 1275.2,260.0 L 1287.7,259.8 L 1300.2,259.1 L 1312.7,258.0 L 1325.2,256.6 L 1337.7,254.6 L 1351.2,252.3 L 1363.7,249.6 L 1376.2,246.4 L 1388.6,242.8 L 1401.1,238.9 L 1413.6,234.8 L 1426.1,230.3 L 1438.6,225.3 L 1451.1,220.1 L 1464.6,214.6 L 1477.1,209.0 L 1489.6,203.1 L 1502.1,196.7 L 1514.6,190.6 L 1527.0,184.0 L 1539.5,177.4 L 1552.0,170.6 L 1564.5,163.8 L 1578.0,156.8 L 1590.5,150.0 L 1603.0,143.2 L 1615.5,136.2 L 1628.0,129.4 L 1640.5,122.6 L 1653.0,116.0 L 1665.4,109.4 L 1677.9,103.3 L 1691.4,96.9 L 1703.9,91.0 L 1716.4,85.4 L 1728.9,79.9 L 1741.4,74.7 L 1753.9,69.7 L 1766.4,65.2 L 1778.9,61.1 L 1791.4,57.2 L 1804.8,53.6 L 1817.3,50.4 L 1829.8,47.7 L 1842.3,45.4 L 1854.8,43.4 L 1867.3,42.0 L 1879.8,40.9 L 1892.3,40.2 L 1905.7,40.0 L 1918.2,40.2 L 1930.7,40.9 L 1943.2,42.0 L 1955.7,43.4 L 1968.2,45.4 L 1980.7,47.7 L 1993.2,50.4 L 2005.7,53.6 L 2019.1,57.2 L 2031.6,61.1 L 2044.1,65.2 L 2056.6,69.7 L 2069.1,74.7 L 2081.6,79.9 L 2094.1,85.4 L 2106.6,91.0 L 2119.1,96.9 L 2132.5,103.3 L 2145.0,109.4 L 2157.5,116.0 L 2170.0,122.6 L 2182.5,129.4 L 2195.0,136.2 L 2207.5,143.2 L 2220.0,150.0';
 const newsImages = Object.entries(import.meta.glob<string>('./assets/print-*', { eager: true, query: '?url', import: 'default' }))
-  .sort(([a], [b]) => a.localeCompare(b)).slice(0, 7).map(([path, image], index) => ({ path, image, label: `Media coverage ${String(index + 1).padStart(2, '0')}` }));
+  .sort(([a], [b]) => a.localeCompare(b)).slice(0, 8).map(([path, image], index) => ({ path, image, label: `Media coverage ${String(index + 1).padStart(2, '0')}` }));
 const faqs = [
   ['What does Pragya Foundation work on?', 'We work to empower women and support the welfare of women and children, with initiatives in menstrual health, hygiene, education, and environmental sustainability.'],
   ['Where does the foundation work?', 'Our projects have covered urban and rural communities in Uttarkashi, Rudraprayag, and Tehri Garhwal in Uttarakhand.'],
@@ -118,21 +118,22 @@ export default function HomePage() {
         const stageHeight = mediaStage.clientHeight;
         const orbit = [
           { x: 0, y: -stageHeight * 0.34 },
-          { x: stageWidth * 0.34, y: -stageHeight * 0.22 },
-          { x: stageWidth * 0.37, y: stageHeight * 0.14 },
-          { x: stageWidth * 0.2, y: stageHeight * 0.35 },
-          { x: -stageWidth * 0.2, y: stageHeight * 0.35 },
-          { x: -stageWidth * 0.37, y: stageHeight * 0.14 },
-          { x: -stageWidth * 0.34, y: -stageHeight * 0.22 },
+          { x: stageWidth * 0.31, y: -stageHeight * 0.25 },
+          { x: stageWidth * 0.39, y: 0 },
+          { x: stageWidth * 0.31, y: stageHeight * 0.25 },
+          { x: 0, y: stageHeight * 0.37 },
+          { x: -stageWidth * 0.31, y: stageHeight * 0.25 },
+          { x: -stageWidth * 0.39, y: 0 },
+          { x: -stageWidth * 0.31, y: -stageHeight * 0.25 },
         ];
         gsap.set(mediaCards, { x: 0, y: 0, scale: 0.12, autoAlpha: 0 });
         gsap.set(mediaCards[0], { scale: 1, autoAlpha: 1 });
         const mediaTimeline = gsap.timeline({
-          scrollTrigger: { trigger: mediaStage, start: 'top top+=74', end: '+=1350', pin: true, scrub: 1, anticipatePin: 1 },
+          scrollTrigger: { trigger: mediaStage, start: 'top top+=74', end: '+=1500', pin: true, pinReparent: true, scrub: 1, anticipatePin: 1 },
         });
         mediaTimeline.to(mediaCards[0], { ...orbit[0], scale: 0.82, duration: 0.72, ease: 'power3.out' }, 0.1);
         mediaCards.slice(1).forEach((card, index) => {
-          mediaTimeline.to(card, { ...orbit[index + 1], scale: 1, autoAlpha: 1, duration: 0.62, ease: 'power3.out' }, 0.12 + index * 0.075);
+          mediaTimeline.to(card, { ...orbit[index + 1], scale: 1, autoAlpha: 1, duration: 0.62, ease: 'power3.out' }, 0.12 + index * 0.065);
         });
         if (mediaCopy) mediaTimeline.fromTo(mediaCopy, { autoAlpha: 0, y: 24, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: 'power2.out' }, 0.54);
       }
