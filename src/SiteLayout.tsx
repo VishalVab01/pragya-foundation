@@ -74,10 +74,33 @@ function PageTitles() {
 export default function SiteLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const headerRef = useRef<HTMLElement>(null);
   useEffect(() => setMenuOpen(false), [location.pathname]);
+  useEffect(() => {
+    const closeDropdownsOutside = (event: PointerEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const clickedDropdown = target.closest('details.nav-dropdown');
+      headerRef.current?.querySelectorAll<HTMLDetailsElement>('details.nav-dropdown[open]').forEach((dropdown) => {
+        if (dropdown !== clickedDropdown) dropdown.open = false;
+      });
+      if (!headerRef.current?.contains(target)) setMenuOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      headerRef.current?.querySelectorAll<HTMLDetailsElement>('details.nav-dropdown[open]').forEach((dropdown) => { dropdown.open = false; });
+      setMenuOpen(false);
+    };
+    document.addEventListener('pointerdown', closeDropdownsOutside);
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('pointerdown', closeDropdownsOutside);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, []);
   return <>
     <PageTitles />
-    <header className="site-header shell">
+    <header ref={headerRef} className="site-header shell">
       <Link className="brand" to="/" aria-label="Pragya Foundation home"><img src={pragyaLogo} alt="Pragya Foundation"/></Link>
       <button className="menu-toggle" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X/> : <Menu/>}</button>
       <nav className={menuOpen ? 'nav open' : 'nav'} aria-label="Main navigation">
