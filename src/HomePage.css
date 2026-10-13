@@ -362,3 +362,17 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
   .ah-faq-list button{font-size:14px}
   .ah-volunteer-form{padding:14px}
 }
+@media(max-width:600px){
+  html body .footer.shell{width:100%!important;padding:42px 18px 16px!important;clip-path:none;box-shadow:none;overflow:visible}
+  html body .footer .footer-main{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:24px 14px!important;padding-bottom:18px!important}
+  html body .footer .footer-intro{grid-column:1/-1;min-width:0}
+  html body .footer .footer-main>div:not(.footer-intro){min-width:0;overflow-wrap:anywhere;font-size:12px!important;gap:9px!important}
+  html body .footer .footer-label{font-size:9px}
+  html body .footer .footer-main>div p,html body .footer .footer-main>div>a{font-size:11px;line-height:1.55;overflow-wrap:anywhere}
+  html body .footer .footer-social{gap:8px;margin-top:16px}
+  html body .footer .footer-wordmark{height:82px;min-height:0;margin:4px -18px 10px;padding:0 0 3px;overflow:visible;align-items:center}
+  html body .footer .footer-wordmark span{font-size:clamp(48px,14vw,58px);line-height:1;letter-spacing:-.09em}
+  html body .footer .footer-bottom{display:grid;grid-template-columns:1fr auto;gap:8px 12px;padding-top:12px;font-size:9px!important;line-height:1.4}
+  html body .footer .footer-bottom span:nth-child(2){display:block;grid-column:1/-1;grid-row:2}
+  html body .footer .footer-bottom a{font-size:9px;white-space:nowrap}
+}

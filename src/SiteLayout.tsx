@@ -30,12 +30,19 @@ function Footer() {
     if (!footerRef.current || !wordmarkRef.current?.parentElement) return;
     const wordmark = wordmarkRef.current;
     const trigger = wordmark.parentElement;
-    const tween = gsap.fromTo(wordmark, { yPercent: 115 }, {
-      yPercent: -32,
-      ease: 'none',
-      scrollTrigger: { trigger, start: 'top bottom', end: 'top 45%', scrub: 0.8 },
+    const media = gsap.matchMedia();
+    media.add('(max-width: 600px)', () => {
+      gsap.set(wordmark, { yPercent: 0 });
     });
-    return () => { tween.scrollTrigger?.kill(); tween.kill(); gsap.set(wordmark, { clearProps: 'transform' }); };
+    media.add('(min-width: 601px)', () => {
+      const tween = gsap.fromTo(wordmark, { yPercent: 115 }, {
+        yPercent: -32,
+        ease: 'none',
+        scrollTrigger: { trigger, start: 'top bottom', end: 'top 45%', scrub: 0.8 },
+      });
+      return () => { tween.scrollTrigger?.kill(); tween.kill(); };
+    });
+    return () => { media.revert(); gsap.set(wordmark, { clearProps: 'transform' }); };
   }, []);
   return <footer ref={footerRef} className="footer shell"><div className="footer-main">
     <div className="footer-intro"><Link className="brand footer-brand" to="/"><span>Pragya</span></Link><p>Empowering women.<br/>Improving lives.<br/>Caring for our environment.</p><div className="footer-social"><a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://www.instagram.com/" aria-label="Instagram">ig</a><a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a></div></div>
