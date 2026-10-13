@@ -428,5 +428,5 @@ html body .footer .footer-brand{color:var(--brand-red)}
 .ah-volunteer ul{border-color:#ffffff8c;background:#fbf4cfdd;color:var(--brand-green-dark)}
 .ah-volunteer li svg{color:var(--brand-red)}
 .ah-volunteer-form .ah-button{background:var(--brand-green);color:#fff}
-html body .footer.shell{background:var(--brand-yellow-soft);box-shadow:0 0 0 100vmax var(--brand-yellow-soft)}
+html body .footer.shell{background:linear-gradient(112deg,#f5e879 0%,#b6cd78 52%,#f2a18b 100%);box-shadow:none;clip-path:none}
 .footer-wordmark{color:var(--brand-green-dark)}
