@@ -156,3 +156,21 @@ html body .footer .footer-bottom{padding-top:18px;color:#89969c;font-size:11px}
 html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 1160px)/2),40px) 24px;background:#e3f1f8;box-shadow:0 0 0 100vmax #e3f1f8;clip-path:inset(0 -100vmax)}
 @media(max-width:900px){.ah-recognitions{padding:80px 22px}.ah-volunteer{grid-template-columns:1fr 1fr;gap:24px;padding:70px 28px 95px}.ah-volunteer-form{padding:20px}}
 @media(max-width:600px){.ah-hero h1{font-size:35px;line-height:1.2;letter-spacing:-.04em}.ah-hero-button{top:calc(100% + 46px)}.ah-purpose h2,.ah-centered-heading h2,.ah-section-heading h2,.ah-volunteer h2{font-size:30px;line-height:1.2;letter-spacing:-.01em}.ah-recognitions{width:100%;padding:70px 18px}.ah-volunteer{width:100%;grid-template-columns:1fr;gap:21px;padding:60px 18px 89px;margin-bottom:0}.ah-volunteer-form{grid-template-columns:1fr;gap:11px;padding:18px}.ah-volunteer-form .wide{grid-column:auto}.ah-volunteer-form input,.ah-volunteer-form textarea{font-size:13px}.ah-volunteer-ticker{bottom:20px;font-size:12px}.footer.shell{width:100%!important;padding-inline:18px!important}}
+/* The stand-for module follows the reference's oversized, looping ribbon carousel. */
+.ah-standfor{height:clamp(650px,43vw,850px);min-height:0;padding:60px 0 75px}
+.ah-standfor:after{z-index:1}
+.ah-wave-ribbon{position:absolute;z-index:2;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.ah-wave-band{fill:none;stroke:#edf6fb;stroke-width:88;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.ah-wave-text{fill:#165471;font:700 23px 'Instrument Sans',sans-serif;letter-spacing:-.025em}
+.ah-standfor-card{z-index:3;width:min(1200px,calc(100% - 360px));min-height:clamp(420px,32vw,620px);grid-template-columns:.94fr 1.06fr;gap:clamp(18px,1.7vw,34px);padding:clamp(20px,1.7vw,34px);border-radius:19px}
+.ah-focus-list{padding:clamp(8px,1.2vw,22px) 8px 8px clamp(5px,1vw,20px)}
+.ah-focus-list h3{margin:0 0 clamp(12px,1.2vw,24px);font-size:clamp(22px,1.7vw,34px);letter-spacing:-.04em}
+.ah-focus-list button{min-height:clamp(62px,5.7vw,112px);gap:clamp(12px,1vw,20px);padding:8px 12px;font-size:clamp(17px,1.6vw,32px);letter-spacing:-.025em}
+.ah-focus-list button>span{width:clamp(46px,4.4vw,86px);height:clamp(46px,4.4vw,86px);border-radius:6px}
+.ah-focus-list button>span svg{width:clamp(19px,1.7vw,34px);height:clamp(19px,1.7vw,34px)}
+.ah-focus-feature{min-height:0;height:100%;border-radius:12px}
+.ah-focus-feature>div{top:clamp(22px,2vw,40px);bottom:auto;left:clamp(22px,2vw,40px);right:clamp(22px,2vw,40px)}
+.ah-focus-feature span{font-size:clamp(9px,.7vw,12px)}
+.ah-focus-feature h3{max-width:620px;margin-top:11px;font-size:clamp(27px,2.6vw,48px);line-height:1.12;letter-spacing:-.035em}
+@media(max-width:1050px){.ah-standfor-card{width:calc(100% - 100px)}}
+@media(max-width:600px){.ah-standfor{height:auto;min-height:670px;padding:62px 18px 100px}.ah-standfor-card{width:100%;min-height:0;grid-template-columns:1fr;gap:9px;padding:11px;border-radius:14px}.ah-focus-list{padding:13px 9px 5px}.ah-focus-list h3{font-size:20px;margin-bottom:10px}.ah-focus-list button{min-height:54px;font-size:15px;gap:12px}.ah-focus-list button>span{width:40px;height:40px}.ah-focus-list button>span svg{width:20px;height:20px}.ah-focus-feature{height:auto;min-height:215px}.ah-focus-feature>div{top:auto;bottom:16px;left:17px;right:17px}.ah-focus-feature h3{font-size:22px}.ah-wave-ribbon{width:155%;left:-28%;height:100%}.ah-wave-band{stroke-width:63}.ah-wave-text{font-size:19px}}

@@ -81,7 +81,11 @@ export default function HomePage() {
         <div className="ah-focus-list"><h3>What We Stand For</h3>{focusAreas.map(({ title, icon: Icon }, index) => <button className={activeFocus === index ? 'active' : ''} key={title} onClick={() => setActiveFocus(index)}><span><Icon size={20}/></span>{title}</button>)}</div>
         <div className="ah-focus-feature"><img src={[communityWork, womenOutreach, projectOne, projectTwo][activeFocus]} alt="Pragya Foundation community work"/><div><span>PRAGYA FOUNDATION</span><h3>{focusAreas[activeFocus].copy}</h3></div></div>
       </div>
-      <div className="ah-ticker"><span>For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;</span><span>For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;</span></div>
+      <svg className="ah-wave-ribbon" viewBox="0 0 1440 860" preserveAspectRatio="none" aria-hidden="true">
+        <defs><path id="pragya-wave-path" d="M -100 830 C 180 830 340 785 550 700 C 760 615 880 490 1080 445 C 1240 410 1345 455 1540 470"/></defs>
+        <path className="ah-wave-band" d="M -100 830 C 180 830 340 785 550 700 C 760 615 880 490 1080 445 C 1240 410 1345 455 1540 470"/>
+        <text className="ah-wave-text"><textPath href="#pragya-wave-path" startOffset="0">For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;For every woman&nbsp; • &nbsp;For every child&nbsp; • &nbsp;For every community&nbsp; • &nbsp;For a healthier environment&nbsp; • &nbsp;</textPath></text>
+      </svg>
     </section>
 
     <section className="ah-projects" id="projects">
