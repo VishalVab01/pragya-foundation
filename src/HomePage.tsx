@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState, type FormEvent } from 'react';
 import { ArrowRight, ArrowUpRight, Check, Plus, Droplets, HeartPulse, Leaf, UsersRound } from 'lucide-react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './HomePage.css';
 import communityWork from './assets/community-work.jpeg';
 import womenOutreach from './assets/women-outreach.jpeg';
@@ -11,6 +12,8 @@ import standforBackground from './assets/standfor-background.png';
 import awardMP from './assets/award-mp.jpg';
 import awardMLA from './assets/award-mla.jpg';
 import awardMinister from './assets/award-minister.jpg';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   { title: 'A cleaner way to manage menstrual waste', place: 'Tehri Garhwal, Uttarakhand', image: womenOutreach, label: 'WASTE MANAGEMENT', copy: 'Working with local bodies to separate, collect, and safely dispose of menstrual waste across urban and rural communities.' },
@@ -53,17 +56,72 @@ const faqs = [
 export default function HomePage() {
   const [activeFocus, setActiveFocus] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const mainRef = useRef<HTMLElement>(null);
   const ribbonTextRefs = useRef<SVGTextPathElement[]>([]);
   useLayoutEffect(() => {
     const tween = gsap.to(ribbonTextRefs.current, { attr: { startOffset: '-80%' }, duration: 24, ease: 'none', repeat: -1 });
     return () => { tween.kill(); };
+  }, []);
+  useLayoutEffect(() => {
+    const root = mainRef.current;
+    if (!root || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const context = gsap.context(() => {
+      const revealGroup = (selector: string, from: gsap.TweenVars, triggerSelector = selector, stagger = 0.1) => {
+        const items = gsap.utils.toArray<HTMLElement>(selector);
+        const trigger = root.querySelector(triggerSelector) ?? items[0];
+        if (!trigger || items.length === 0) return;
+        items.forEach((item, index) => {
+          gsap.fromTo(item, { autoAlpha: 0, ...from }, {
+            autoAlpha: 1, x: 0, y: 0, scale: 1, rotation: 0,
+            duration: 0.85, delay: index * stagger, ease: 'power3.out',
+            scrollTrigger: { trigger, start: 'top 84%', once: true },
+          });
+        });
+      };
+
+      gsap.fromTo('.ah-hero-image', { scale: 1.07 }, { scale: 1, duration: 1.8, ease: 'power2.out' });
+      revealGroup('.ah-hero h1 > span', { y: 34 }, '.ah-hero', 0.13);
+      revealGroup('.ah-hero-button', { y: 20 }, '.ah-hero', 0);
+      revealGroup('.ah-donors', { y: 18 }, '.ah-hero', 0);
+
+      revealGroup('.ah-recognition-strip > p', { y: 22 }, '.ah-recognition-strip', 0);
+      revealGroup('.ah-wordmarks', { y: 20 }, '.ah-recognition-strip', 0);
+      revealGroup('.ah-purpose > *', { y: 36 }, '.ah-purpose', 0.12);
+      revealGroup('.ah-standfor-card', { y: 48, scale: 0.97 }, '.ah-standfor', 0);
+
+      revealGroup('.ah-projects .ah-section-heading > *', { y: 30 }, '.ah-projects .ah-section-heading', 0.14);
+      revealGroup('.ah-project-card', { y: 42, scale: 0.97 }, '.ah-project-grid', 0.14);
+      revealGroup('.ah-goals .ah-centered-heading > *', { y: 28 }, '.ah-goals .ah-centered-heading', 0.12);
+      gsap.utils.toArray<HTMLElement>('.ah-goal-row').forEach((row, index) => {
+        gsap.fromTo(row, { autoAlpha: 0, x: index % 2 ? 48 : -48 }, {
+          autoAlpha: 1, x: 0, duration: 0.95, ease: 'power3.out',
+          scrollTrigger: { trigger: row, start: 'top 82%', once: true },
+        });
+      });
+
+      revealGroup('.ah-impacts .ah-section-heading > *', { y: 30 }, '.ah-impacts .ah-section-heading', 0.14);
+      revealGroup('.ah-impact-grid article', { y: 42, scale: 0.96 }, '.ah-impact-grid', 0.13);
+      revealGroup('.ah-recognitions .ah-centered-heading > *', { y: 28 }, '.ah-recognitions .ah-centered-heading', 0.12);
+      revealGroup('.ah-award-grid article', { y: 36, rotation: 1.5 }, '.ah-award-grid', 0.12);
+      revealGroup('.ah-news .ah-section-heading > *', { y: 28 }, '.ah-news .ah-section-heading', 0.12);
+      revealGroup('.ah-news-grid a', { y: 36, scale: 0.96 }, '.ah-news-grid', 0.1);
+      revealGroup('.ah-news .ah-text-link', { y: 16 }, '.ah-news', 0);
+      revealGroup('.ah-faq .ah-centered-heading > *', { y: 28 }, '.ah-faq .ah-centered-heading', 0.12);
+      revealGroup('.ah-faq-list article', { x: 26 }, '.ah-faq-list', 0.08);
+      revealGroup('.ah-volunteer-copy', { x: -42 }, '.ah-volunteer', 0);
+      revealGroup('.ah-volunteer-form', { x: 42 }, '.ah-volunteer', 0);
+    }, root);
+
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+    return () => context.revert();
   }, []);
   function sendVolunteerEnquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const body = [...new FormData(event.currentTarget).entries()].map(([key, value]) => `${key}: ${value}`).join('\n');
     window.location.href = `mailto:pragyafoundation2024@gmail.com?subject=${encodeURIComponent('Volunteer enquiry')}&body=${encodeURIComponent(body)}`;
   }
-  return <main className="altruist-home" id="top">
+  return <main ref={mainRef} className="altruist-home" id="top">
     <section className="ah-hero">
       <img className="ah-hero-image" src={pragyaHero} alt="Women learning sewing and textile skills through Pragya Foundation" />
       <div className="ah-hero-wash" />
