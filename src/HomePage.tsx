@@ -13,6 +13,9 @@ import altruistClouds from './assets/altruist-clouds.webp';
 import awardMP from './assets/award-mp.jpg';
 import awardMLA from './assets/award-mla.jpg';
 import awardMinister from './assets/award-minister.jpg';
+import childrenWelfareImage from './assets/children-welfare.jpg';
+import environmentImage from './assets/environment.jpg';
+import healthHygieneImage from './assets/health-hygiene.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,10 +25,10 @@ const projects = [
   { title: 'Awareness that reaches communities', place: 'Uttarakhand, India', image: projectOne, label: 'WOMEN & CHILDREN', copy: 'Community programs focused on women’s empowerment, health, hygiene, education, and the welfare of children.' },
 ];
 const focusAreas = [
-  { title: 'Women’s empowerment', icon: UsersRound, copy: 'Supporting dignity, opportunity, and wellbeing for women.' },
-  { title: 'Health & hygiene', icon: HeartPulse, copy: 'Promoting menstrual health, hygiene, and better access to care.' },
-  { title: 'Children’s welfare', icon: Droplets, copy: 'Working for the education, safety, and welfare of children.' },
-  { title: 'Environment', icon: Leaf, copy: 'Helping communities build cleaner and more sustainable systems.' },
+  { title: 'Women’s empowerment', icon: UsersRound, copy: 'Supporting dignity, opportunity, and wellbeing for women.', image: standforBackground },
+  { title: 'Health & hygiene', icon: HeartPulse, copy: 'Promoting menstrual health, hygiene, and better access to care.', image: healthHygieneImage },
+  { title: 'Children’s welfare', icon: Droplets, copy: 'Working for the education, safety, and welfare of children.', image: childrenWelfareImage },
+  { title: 'Environment', icon: Leaf, copy: 'Helping communities build cleaner and more sustainable systems.', image: environmentImage },
 ];
 const goals = [
   { title: 'Expand biodegradable sanitary pad distribution', copy: 'Increase awareness and access to biodegradable sanitary pads in communities across Uttarakhand.', image: projectTwo, note: 'HEALTHIER CHOICES FOR WOMEN' },
@@ -156,7 +159,7 @@ export default function HomePage() {
       <div className="ah-standfor-bg"><img src={standforBackground} alt=""/></div>
       <div className="ah-standfor-card">
         <div className="ah-focus-list"><h3>What We Stand For</h3>{focusAreas.map(({ title, icon: Icon }, index) => <button className={activeFocus === index ? 'active' : ''} key={title} onClick={() => setActiveFocus(index)}><span><Icon size={20}/></span>{title}</button>)}</div>
-        <div className="ah-focus-feature"><img src={standforBackground} alt="A teacher reading with children in their community"/><div><span>PRAGYA FOUNDATION</span><h3>Learning should never be out of reach. For any child.</h3></div></div>
+        <div className="ah-focus-feature"><img src={focusAreas[activeFocus].image} alt={focusAreas[activeFocus].title}/><div><span>PRAGYA FOUNDATION</span><h3>Learning should never be out of reach. For any child.</h3></div></div>
       </div>
       <svg className="ah-wave-ribbon ah-wave-ribbon-desktop" viewBox="0 0 1920 860" preserveAspectRatio="none" aria-hidden="true">
         <defs><path id="pragya-wave-path-desktop" d="M -160 850 C 250 850 430 800 700 690 C 970 580 1130 475 1410 445 C 1630 422 1800 465 2080 480"/></defs>
