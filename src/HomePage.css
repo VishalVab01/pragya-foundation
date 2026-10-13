@@ -237,3 +237,6 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
 .ah-wave-ribbon{transform:translateY(50px)}
 .ah-wave-ribbon .ah-wave-text{font-size:32px}
 @media(max-width:600px){.ah-wave-ribbon{transform:translateY(36px)}.ah-wave-ribbon .ah-wave-text{font-size:25px}}
+.ah-wave-ribbon .ah-wave-band{stroke-width:74px}
+.ah-wave-ribbon .ah-wave-text{font-size:35px}
+@media(max-width:600px){.ah-wave-ribbon .ah-wave-band{stroke-width:42px}.ah-wave-ribbon .ah-wave-text{font-size:28px}}
