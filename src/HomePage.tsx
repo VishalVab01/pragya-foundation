@@ -190,13 +190,13 @@ export default function HomePage() {
       <header className="ah-section-heading"><div><span className="ah-badge">Our Impact</span><h2>Changes We Proudly Made</h2></div><p>Progress built through local partnerships, practical solutions, and the commitment of communities.</p></header>
       <div className="ah-impact-grid">{impacts.map((item) => <article key={item.title}><img src={item.image} alt="Pragya Foundation community program"/><span><ArrowUpRight size={17}/></span><h3>{item.title}</h3></article>)}</div>
       <svg className="ah-impact-ribbon ah-impact-ribbon-desktop" viewBox="0 0 1920 240" preserveAspectRatio="none" aria-hidden="true">
-        <defs><path id="pragya-impact-wave-desktop" d="M -150 230 C 120 235 270 215 430 178 C 590 140 650 88 810 102 C 970 116 1020 193 1190 178 C 1375 162 1440 72 1610 50 C 1780 28 1920 50 2070 18"/></defs>
-        <path className="ah-wave-band" d="M -150 230 C 120 235 270 215 430 178 C 590 140 650 88 810 102 C 970 116 1020 193 1190 178 C 1375 162 1440 72 1610 50 C 1780 28 1920 50 2070 18"/>
+        <defs><path id="pragya-impact-wave-desktop" d="M -150 230 C 120 235 270 215 430 178 C 590 140 650 88 810 102 C 970 116 1020 193 1190 178 C 1375 162 1440 72 1610 50 C 1780 10 1930 -55 2070 -90"/></defs>
+        <path className="ah-wave-band" d="M -150 230 C 120 235 270 215 430 178 C 590 140 650 88 810 102 C 970 116 1020 193 1190 178 C 1375 162 1440 72 1610 50 C 1780 10 1930 -55 2070 -90"/>
         <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[2] = node; }} href="#pragya-impact-wave-desktop" startOffset="20%">{impactRibbonText}</textPath></text>
       </svg>
       <svg className="ah-impact-ribbon ah-impact-ribbon-mobile" viewBox="0 0 430 210" preserveAspectRatio="none" aria-hidden="true">
-        <defs><path id="pragya-impact-wave-mobile" d="M -65 200 C 20 205 65 188 115 155 C 165 122 184 83 230 92 C 275 100 284 160 330 145 C 372 130 405 55 490 20"/></defs>
-        <path className="ah-wave-band" d="M -65 200 C 20 205 65 188 115 155 C 165 122 184 83 230 92 C 275 100 284 160 330 145 C 372 130 405 55 490 20"/>
+        <defs><path id="pragya-impact-wave-mobile" d="M -65 200 C 20 205 65 188 115 155 C 165 122 184 83 230 92 C 275 100 284 160 330 145 C 372 130 405 20 490 -40"/></defs>
+        <path className="ah-wave-band" d="M -65 200 C 20 205 65 188 115 155 C 165 122 184 83 230 92 C 275 100 284 160 330 145 C 372 130 405 20 490 -40"/>
         <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[3] = node; }} href="#pragya-impact-wave-mobile" startOffset="20%">{impactRibbonText}</textPath></text>
       </svg>
     </section>
