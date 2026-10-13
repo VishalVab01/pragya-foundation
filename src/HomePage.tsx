@@ -9,6 +9,7 @@ import projectOne from './assets/project-01.jpeg';
 import projectTwo from './assets/project-02.jpeg';
 import pragyaHero from './assets/pragya-hero.png';
 import standforBackground from './assets/standfor-background.png';
+import altruistClouds from './assets/altruist-clouds.webp';
 import awardMP from './assets/award-mp.jpg';
 import awardMLA from './assets/award-mla.jpg';
 import awardMinister from './assets/award-minister.jpg';
@@ -215,9 +216,9 @@ export default function HomePage() {
     </section>
 
     <section className="ah-volunteer" id="volunteer">
-      <img className="ah-volunteer-bg" src={projectTwo} alt=""/>
+      <img className="ah-volunteer-bg" src={altruistClouds} alt=""/>
       <div className="ah-volunteer-copy"><span className="ah-badge">Join Us</span><h2>Want to volunteer?</h2><p>Join Pragya Foundation in supporting women and children, advancing menstrual health, and building more sustainable communities.</p><ul><li><Check size={17}/> Support real causes that matter</li><li><Check size={17}/> Flexible ways to contribute your time</li><li><Check size={17}/> Work with local community initiatives</li></ul></div>
-      <form className="ah-volunteer-form" onSubmit={sendVolunteerEnquiry}><label>Full Name<input name="Full name" required placeholder="Your name"/></label><label>Email ID<input name="Email" required type="email" placeholder="you@example.com"/></label><label>Phone Number<input name="Mobile number" required type="tel" placeholder="+91"/></label><label>Location<input name="Current location" placeholder="City or district"/></label><label className="wide">Message<textarea name="Message" rows={3} placeholder="How would you like to contribute?"/></label><button className="ah-button" type="submit">Submit <ArrowRight size={16}/></button></form>
+      <form className="ah-volunteer-form" onSubmit={sendVolunteerEnquiry}><label className="wide">Full Name<input name="Full name" required placeholder="Your name"/></label><label>Email ID<input name="Email" required type="email" placeholder="you@example.com"/></label><label>Phone Number<input name="Mobile number" required type="tel" placeholder="+91"/></label><label className="wide">Location<select name="Current location" defaultValue="" required><option value="" disabled>Choose your location</option><option>Dehradun</option><option>Tehri Garhwal</option><option>Uttarkashi</option><option>Rudraprayag</option><option>Other</option></select></label><label className="wide">Message<textarea name="Message" rows={3} placeholder="How would you like to contribute?"/></label><button className="ah-button" type="submit">Submit <ArrowRight size={16}/></button></form>
       <svg className="ah-volunteer-ribbon ah-volunteer-ribbon-desktop" viewBox="0 0 1920 300" preserveAspectRatio="none" aria-hidden="true">
         <defs><path id="pragya-volunteer-wave-desktop" d="M -150 285 C 250 280 440 250 690 205 C 940 160 1120 100 1390 70 C 1620 45 1800 60 2070 92"/></defs>
         <path className="ah-wave-band" d="M -150 285 C 250 280 440 250 690 205 C 940 160 1120 100 1390 70 C 1620 45 1800 60 2070 92"/>
