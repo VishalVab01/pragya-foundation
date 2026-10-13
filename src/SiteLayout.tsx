@@ -2,6 +2,9 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const groups = [
   { label: 'About Us', to: '/about-us', links: [
@@ -24,18 +27,15 @@ function Footer() {
   const footerRef = useRef<HTMLElement>(null);
   const wordmarkRef = useRef<HTMLSpanElement>(null);
   useLayoutEffect(() => {
-    if (!footerRef.current || !wordmarkRef.current) return;
+    if (!footerRef.current || !wordmarkRef.current?.parentElement) return;
     const wordmark = wordmarkRef.current;
-    const footer = footerRef.current;
-    const checkVisibility = () => {
-      if (footer.getBoundingClientRect().top < window.innerHeight * 0.92) {
-        gsap.fromTo(wordmark, { yPercent: 110, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: 1.15, ease: 'power3.out' });
-        window.removeEventListener('scroll', checkVisibility);
-      }
-    };
-    window.addEventListener('scroll', checkVisibility, { passive: true });
-    requestAnimationFrame(checkVisibility);
-    return () => { window.removeEventListener('scroll', checkVisibility); gsap.killTweensOf(wordmark); gsap.set(wordmark, { clearProps: 'transform,opacity,visibility' }); };
+    const trigger = wordmark.parentElement;
+    const tween = gsap.fromTo(wordmark, { yPercent: 115 }, {
+      yPercent: -5,
+      ease: 'none',
+      scrollTrigger: { trigger, start: 'top bottom', end: 'top 45%', scrub: 0.8 },
+    });
+    return () => { tween.scrollTrigger?.kill(); tween.kill(); gsap.set(wordmark, { clearProps: 'transform' }); };
   }, []);
   return <footer ref={footerRef} className="footer shell"><div className="footer-main">
     <div className="footer-intro"><Link className="brand footer-brand" to="/"><span>Pragya</span></Link><p>Empowering women.<br/>Improving lives.<br/>Caring for our environment.</p><div className="footer-social"><a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://www.instagram.com/" aria-label="Instagram">ig</a><a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a></div></div>
