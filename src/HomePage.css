@@ -226,3 +226,5 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
   .ah-volunteer{padding-bottom:140px}
 }
 @media(max-width:600px){.ah-hero-copy{top:13%}}
+.ah-hero-wash{background:linear-gradient(180deg,rgba(14,89,126,.2) 0%,rgba(16,96,133,.08) 42%,rgba(255,255,255,.12) 70%,rgba(255,255,255,.85) 100%)}
+@media(max-width:600px){.ah-hero-wash{background:linear-gradient(180deg,rgba(15,89,123,.2),rgba(20,99,134,.12) 48%,rgba(255,255,255,.2) 75%,rgba(255,255,255,.85) 100%)}}
