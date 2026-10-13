@@ -1,6 +1,6 @@
 # Pragya Foundation
 
-Static React + TypeScript landing page for Pragya Foundation, built with Vite and inspired by the Altruist nonprofit template.
+Multi-page React + TypeScript website for Pragya Foundation, built with Vite and inspired by the Altruist nonprofit template. Each original site section has its own route, including About Us, projects, impact, news, gallery, volunteering, donations, and contact.
 
 ## Development
 
@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-The page uses foundation-published copy, reported project figures, logo, and photos. Donation and volunteer calls to action link to the existing Pragya Foundation website.
+The site uses foundation-published copy, reported project figures, logo, photos, print coverage, and videos. The volunteer enquiry opens an email to the foundation; video clips are streamed from the foundation website.
