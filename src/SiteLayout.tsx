@@ -31,7 +31,7 @@ function Footer() {
     const wordmark = wordmarkRef.current;
     const trigger = wordmark.parentElement;
     const tween = gsap.fromTo(wordmark, { yPercent: 115 }, {
-      yPercent: -5,
+      yPercent: -18,
       ease: 'none',
       scrollTrigger: { trigger, start: 'top bottom', end: 'top 45%', scrub: 0.8 },
     });
