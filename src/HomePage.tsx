@@ -116,7 +116,7 @@ export default function HomePage() {
         const mediaCopy = mediaStage.querySelector<HTMLElement>('.ah-media-copy');
         const stageWidth = mediaStage.clientWidth;
         const stageHeight = mediaStage.clientHeight;
-        const orbitRadius = Math.min(stageWidth * 0.38, stageHeight * 0.4);
+        const orbitRadius = Math.min(stageWidth * 0.38, stageHeight * 0.44);
         const orbit = mediaCards.map((_, index) => {
           const angle = index * Math.PI / 4;
           return { x: Math.sin(angle) * orbitRadius, y: -Math.cos(angle) * orbitRadius };
@@ -124,7 +124,7 @@ export default function HomePage() {
         gsap.set(mediaCards, { x: 0, y: 0, scale: 0.12, autoAlpha: 0 });
         gsap.set(mediaCards[0], { scale: 1, autoAlpha: 1 });
         const mediaTimeline = gsap.timeline({
-          scrollTrigger: { trigger: mediaStage, start: 'top top+=125', end: '+=1500', pin: true, pinReparent: true, scrub: 1, anticipatePin: 1 },
+          scrollTrigger: { trigger: mediaStage, start: 'top top+=145', end: '+=1500', pin: true, pinReparent: true, scrub: 1, anticipatePin: 1 },
         });
         mediaTimeline.to(mediaCards[0], { ...orbit[0], scale: 1, duration: 0.62, ease: 'power3.out' }, 0.05);
         mediaCards.slice(1).forEach((card, index) => {
