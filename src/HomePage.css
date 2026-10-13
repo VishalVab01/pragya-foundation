@@ -249,3 +249,12 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
   .ah-impact-ribbon .ah-wave-band,.ah-volunteer-ribbon .ah-wave-band{stroke-width:42px}
   .ah-impact-ribbon .ah-wave-text,.ah-volunteer-ribbon .ah-wave-text{font-size:31px}
 }
+
+/* Continuous areas-of-work ticker beneath the hero. */
+.ah-wordmarks{display:block;overflow:hidden;white-space:nowrap;mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.ah-wordmarks-track{display:flex;width:max-content;animation:ah-wordmarks-scroll 32s linear infinite;will-change:transform}
+.ah-wordmark-group{display:flex;flex:0 0 auto;align-items:center;gap:clamp(28px,5vw,76px);padding-right:clamp(28px,5vw,76px)}
+.ah-wordmark-group span{font-size:clamp(16px,2vw,25px);font-weight:600;letter-spacing:-.04em;white-space:nowrap}
+@keyframes ah-wordmarks-scroll{to{transform:translateX(-50%)}}
+@media(max-width:600px){.ah-wordmark-group span{font-size:15px}.ah-wordmarks-track{animation-duration:25s}}
+@media(prefers-reduced-motion:reduce){.ah-wordmarks-track{animation:none}}

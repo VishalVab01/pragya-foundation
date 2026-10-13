@@ -75,7 +75,13 @@ export default function HomePage() {
 
     <section className="ah-recognition-strip" aria-label="Pragya Foundation's areas of work">
       <p>Working with communities across Uttarakhand</p>
-      <div className="ah-wordmarks"><span>Women’s welfare</span><span>Menstrual health</span><span>Children’s welfare</span><span>Health &amp; hygiene</span><span>Environment</span><span>Education</span></div>
+      <div className="ah-wordmarks">
+        <div className="ah-wordmarks-track">
+          {[0, 1].map((copy) => <div className="ah-wordmark-group" key={copy} aria-hidden={copy === 1}>
+            <span>Women’s welfare</span><span>Menstrual health</span><span>Children’s welfare</span><span>Health &amp; hygiene</span><span>Environment</span><span>Education</span>
+          </div>)}
+        </div>
+      </div>
     </section>
 
     <section className="ah-purpose" id="our-purpose">
