@@ -126,11 +126,11 @@ export default function HomePage() {
         const mediaTimeline = gsap.timeline({
           scrollTrigger: { trigger: mediaStage, start: 'top top+=125', end: '+=1500', pin: true, pinReparent: true, scrub: 1, anticipatePin: 1 },
         });
-        mediaTimeline.to(mediaCards[0], { ...orbit[0], scale: 1, duration: 0.72, ease: 'power3.out' }, 0.1);
+        mediaTimeline.to(mediaCards[0], { ...orbit[0], scale: 1, duration: 0.62, ease: 'power3.out' }, 0.05);
         mediaCards.slice(1).forEach((card, index) => {
-          mediaTimeline.to(card, { ...orbit[index + 1], scale: 1, autoAlpha: 1, duration: 0.62, ease: 'power3.out' }, 0.12 + index * 0.065);
+          mediaTimeline.to(card, { ...orbit[index + 1], scale: 1, autoAlpha: 1, duration: 0.62, ease: 'power3.out' }, 0.7 + index * 0.075);
         });
-        if (mediaCopy) mediaTimeline.fromTo(mediaCopy, { autoAlpha: 0, y: 24, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.48, ease: 'power2.out' }, 1.16);
+        if (mediaCopy) mediaTimeline.fromTo(mediaCopy, { autoAlpha: 0, y: 24, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.48, ease: 'power2.out' }, 1.82);
       }
       revealGroup('.ah-faq .ah-centered-heading > *', { y: 28 }, '.ah-faq .ah-centered-heading', 0.12);
       revealGroup('.ah-faq-list article', { x: 26 }, '.ah-faq-list', 0.08);
