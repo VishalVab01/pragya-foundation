@@ -202,13 +202,13 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
   .ah-wave-text{font-size:17px;}
 }
 
-.ah-impact-ribbon{position:relative;display:block;left:calc((100% - 100vw)/2);width:100vw;height:190px;margin:42px 0 -34px;overflow:visible;pointer-events:none}
+.ah-impact-ribbon{position:relative;display:block;left:calc((100% - 100vw)/2);width:100vw;height:190px;margin:22px 0 -34px;overflow:visible;pointer-events:none}
 .ah-impact-ribbon-mobile{display:none}
 .ah-impact-ribbon .ah-wave-band{stroke-width:70px}
 .ah-impact-ribbon .ah-wave-text{font-size:21px}
 @media(max-width:600px){
   .ah-impact-ribbon-desktop{display:none}
-  .ah-impact-ribbon-mobile{display:block;height:190px;margin:28px 0 -30px}
+  .ah-impact-ribbon-mobile{display:block;height:190px;margin:12px 0 -30px}
   .ah-impact-ribbon-mobile .ah-wave-band{stroke-width:51px}
   .ah-impact-ribbon-mobile .ah-wave-text{font-size:15px}
 }
