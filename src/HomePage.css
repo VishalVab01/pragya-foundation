@@ -296,3 +296,69 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
 .ah-faq-list button svg{width:23px;height:23px;color:#111}
 .ah-faq-list article p{font-size:15px;color:#718087}
 @media(max-width:600px){.ah-faq{padding-top:72px;padding-bottom:78px}.ah-faq .ah-centered-heading .ah-badge{min-height:36px;padding-inline:14px;font-size:13px}.ah-faq .ah-centered-heading h2{max-width:380px;margin:20px 0 13px;font-size:34px}.ah-faq .ah-centered-heading p{font-size:15px}.ah-faq-list{margin-top:28px;gap:10px}.ah-faq-list article{padding-inline:15px;border-radius:10px}.ah-faq-list button{min-height:62px;font-size:15px}.ah-faq-list button svg{width:20px;height:20px}.ah-faq-list article p{font-size:13px}}
+
+/* Phone layout refinements */
+@media(max-width:600px){
+  .altruist-home{width:100%;overflow-x:clip}
+  .ah-hero{width:calc(100% - 16px);height:min(700px,calc(100svh - 16px));min-height:590px;margin:8px auto 0;border-radius:13px}
+  .ah-hero-image{object-position:54% center}
+  .ah-hero-copy{top:18%;width:calc(100% - 32px)}
+  .ah-hero h1{font-size:clamp(37px,10.8vw,47px);line-height:1.1}
+  .ah-hero h1 .ah-outline{max-width:100%;padding-inline:10px}
+  .ah-hero-button{top:calc(100% + 26px);min-width:158px;min-height:48px}
+  .ah-donors{bottom:31px;gap:7px;font-size:9px}
+  .ah-avatar-stack img{width:25px;height:25px}
+  .ah-recognition-strip{width:calc(100% - 36px);padding:25px 0 38px}
+  .ah-wordmarks{gap:11px 17px}
+  .ah-wordmarks span{font-size:12px}
+  .ah-purpose{min-height:300px;padding:50px 22px 58px}
+  .ah-purpose h2,.ah-centered-heading h2,.ah-section-heading h2,.ah-volunteer h2{font-size:clamp(30px,8vw,36px);line-height:1.14}
+  .ah-purpose p,.ah-centered-heading p{font-size:15px}
+  .ah-standfor{min-height:620px;padding:54px 0 90px}
+  .ah-standfor-card{width:calc(100% - 28px);min-height:0;grid-template-columns:1fr;gap:8px;padding:10px;border-radius:14px}
+  .ah-focus-list{padding:12px 8px 3px}
+  .ah-focus-list h3{font-size:19px;margin-bottom:8px}
+  .ah-focus-list button{min-height:51px;font-size:14px}
+  .ah-focus-list button>span{width:38px;height:38px}
+  .ah-focus-feature{min-height:205px;border-radius:9px}
+  .ah-focus-feature h3{font-size:21px}
+  .ah-projects,.ah-goals,.ah-impacts,.ah-recognitions,.ah-news,.ah-faq{width:calc(100% - 36px);padding-top:62px;padding-bottom:68px}
+  .ah-section-heading{margin-bottom:23px}
+  .ah-section-heading>p{font-size:13px;line-height:1.55}
+  .ah-project-card{min-height:390px;border-radius:12px}
+  .ah-goal-row,.ah-goal-row.reverse{gap:0}
+  .ah-goal-image{min-height:215px}
+  .ah-goal-copy{padding:21px}
+  .ah-goal-copy h3{font-size:24px}
+  .ah-impact-grid article{height:225px;border-radius:11px}
+  .ah-impact-ribbon-mobile{height:155px;margin:8px 0 -24px}
+  .ah-recognitions{width:100%;padding-inline:18px}
+  .ah-award-grid article{grid-template-columns:100px 1fr;border-radius:10px}
+  .ah-award-grid img{height:96px}
+  .ah-news{width:100%;padding-inline:18px}
+  .ah-news-grid a{height:160px;border-radius:8px}
+  .ah-faq .ah-centered-heading h2{font-size:32px}
+  .ah-faq-list{width:100%}
+  .ah-volunteer{width:100%;min-height:0;grid-template-columns:1fr;gap:25px;margin:0;padding:58px 18px 125px;border-radius:0;overflow:visible}
+  .ah-volunteer h2{font-size:clamp(36px,9vw,44px);margin:19px 0 14px}
+  .ah-volunteer-copy>p{font-size:15px;line-height:1.55}
+  .ah-volunteer ul{margin-top:23px;padding:12px 14px;border-radius:13px;font-size:14px}
+  .ah-volunteer li{min-height:42px;gap:10px}
+  .ah-volunteer-form{grid-template-columns:1fr;gap:13px;padding:17px;border-radius:12px}
+  .ah-volunteer-form label{font-size:13px}
+  .ah-volunteer-form input,.ah-volunteer-form select,.ah-volunteer-form textarea{min-height:46px;padding:11px 12px;font-size:14px}
+  .ah-volunteer-form textarea{min-height:90px}
+  .ah-volunteer-form .wide,.ah-volunteer-form .ah-button{grid-column:auto}
+  .ah-volunteer-form .ah-button{min-height:49px;font-size:15px}
+  .ah-volunteer-ribbon-mobile{top:95%;left:-72px;right:-72px;height:195px}
+}
+@media(max-width:380px){
+  .ah-hero h1{font-size:37px}
+  .ah-donors{font-size:8px;gap:5px}
+  .ah-wordmarks{gap:9px 13px}
+  .ah-wordmarks span{font-size:11px}
+  .ah-project-card{min-height:350px}
+  .ah-section-heading h2{font-size:29px}
+  .ah-faq-list button{font-size:14px}
+  .ah-volunteer-form{padding:14px}
+}
