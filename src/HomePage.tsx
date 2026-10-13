@@ -6,7 +6,7 @@ import communityWork from './assets/community-work.jpeg';
 import womenOutreach from './assets/women-outreach.jpeg';
 import projectOne from './assets/project-01.jpeg';
 import projectTwo from './assets/project-02.jpeg';
-import pragyaHero from './assets/pragya-hero.gif';
+import pragyaHero from './assets/pragya-hero.png';
 import awardMP from './assets/award-mp.jpg';
 import awardMLA from './assets/award-mla.jpg';
 import awardMinister from './assets/award-minister.jpg';
