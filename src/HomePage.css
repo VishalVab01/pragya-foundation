@@ -243,3 +243,9 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
 .ah-wave-ribbon .ah-wave-text{font-size:39px}
 @media(min-width:601px){.ah-standfor-card{width:min(1000px,calc(100% - 500px))}}
 @media(max-width:600px){.ah-wave-ribbon .ah-wave-text{font-size:31px}.ah-standfor-card{width:calc(100% - 76px)}}
+.ah-impact-ribbon .ah-wave-band,.ah-volunteer-ribbon .ah-wave-band{stroke-width:74px}
+.ah-impact-ribbon .ah-wave-text,.ah-volunteer-ribbon .ah-wave-text{font-size:39px}
+@media(max-width:600px){
+  .ah-impact-ribbon .ah-wave-band,.ah-volunteer-ribbon .ah-wave-band{stroke-width:42px}
+  .ah-impact-ribbon .ah-wave-text,.ah-volunteer-ribbon .ah-wave-text{font-size:31px}
+}
