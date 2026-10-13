@@ -159,7 +159,7 @@ export default function HomePage() {
       <div className="ah-standfor-bg"><img src={standforBackground} alt=""/></div>
       <div className="ah-standfor-card">
         <div className="ah-focus-list"><h3>What We Stand For</h3>{focusAreas.map(({ title, icon: Icon }, index) => <button className={activeFocus === index ? 'active' : ''} key={title} onClick={() => setActiveFocus(index)}><span><Icon size={20}/></span>{title}</button>)}</div>
-        <div className="ah-focus-feature"><img src={focusAreas[activeFocus].image} alt={focusAreas[activeFocus].title}/><div><span>PRAGYA FOUNDATION</span><h3>Learning should never be out of reach. For any child.</h3></div></div>
+        <div className="ah-focus-feature"><img src={focusAreas[activeFocus].image} alt={focusAreas[activeFocus].title}/><div><span>PRAGYA FOUNDATION · {focusAreas[activeFocus].title}</span><h3>{focusAreas[activeFocus].copy}</h3></div></div>
       </div>
       <svg className="ah-wave-ribbon ah-wave-ribbon-desktop" viewBox="0 0 1920 860" preserveAspectRatio="none" aria-hidden="true">
         <defs><path id="pragya-wave-path-desktop" d="M -160 850 C 250 850 430 800 700 690 C 970 580 1130 475 1410 445 C 1630 422 1800 465 2080 480"/></defs>
