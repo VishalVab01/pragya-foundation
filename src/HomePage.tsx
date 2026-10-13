@@ -116,10 +116,11 @@ export default function HomePage() {
         const mediaCopy = mediaStage.querySelector<HTMLElement>('.ah-media-copy');
         const stageWidth = mediaStage.clientWidth;
         const stageHeight = mediaStage.clientHeight;
-        const orbitRadius = Math.min(stageWidth * 0.38, stageHeight * 0.44);
+        const orbitRadiusX = stageWidth * 0.38;
+        const orbitRadiusY = stageHeight * 0.44;
         const orbit = mediaCards.map((_, index) => {
           const angle = index * Math.PI / 4;
-          return { x: Math.sin(angle) * orbitRadius, y: -Math.cos(angle) * orbitRadius };
+          return { x: Math.sin(angle) * orbitRadiusX, y: -Math.cos(angle) * orbitRadiusY };
         });
         gsap.set(mediaCards, { x: 0, y: 0, scale: 0.12, autoAlpha: 0 });
         gsap.set(mediaCards[0], { scale: 1, autoAlpha: 1 });
