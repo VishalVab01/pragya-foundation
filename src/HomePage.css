@@ -377,60 +377,60 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
   html body .footer .footer-bottom a{font-size:9px;white-space:nowrap}
 }
 
-/* Pragya Foundation palette: grounded leaf green, warm vermilion, and a quiet marigold. */
-:root{--brand-green:#527843;--brand-green-dark:#304d3b;--brand-yellow:#dfc15b;--brand-yellow-soft:#f3f0e4;--brand-red:#c84c3a;--brand-red-dark:#a63b31;--brand-red-soft:#f7e9e4;--brand-sage:#e9eee5;--brand-ink:#292d25;--brand-paper:#fbfaf6;--blue:var(--brand-green);--blue-deep:var(--brand-green-dark);--orange:var(--brand-red);--cream:var(--brand-paper)}
+/* Pragya Foundation brand palette: leaf green, marigold, and vermilion. */
+:root{--brand-green:#557d2d;--brand-green-dark:#344f29;--brand-yellow:#f3dc55;--brand-yellow-soft:#fbf4cf;--brand-red:#ed4d2e;--brand-ink:#292d25;--brand-paper:#fffdf6;--blue:var(--brand-green);--blue-deep:var(--brand-green-dark);--orange:var(--brand-red);--cream:var(--brand-paper)}
 body{background:var(--brand-paper);color:var(--brand-ink)}
 html body .site-header .brand,html body .footer .footer-brand{color:var(--brand-red)}
 html body .site-header .nav>a.active,html body .site-header .nav-dropdown[open]>summary{color:var(--brand-red)}
-html body .site-header .nav-cta,html body .nav .nav-cta,html body .button,html body .ah-button{background:var(--brand-red);color:#fff}
-html body .site-header .nav-cta:hover,html body .nav .nav-cta:hover,html body .button:hover,html body .ah-button:hover{background:var(--brand-red-dark)}
+html body .site-header .nav-cta,html body .nav .nav-cta,html body .button,html body .ah-button{background:var(--brand-green);color:#fff}
+html body .site-header .nav-cta:hover,html body .nav .nav-cta:hover,html body .button:hover,html body .ah-button:hover{background:var(--brand-green-dark)}
 html body .text-link,html body .ah-text-link,html body .page-tabs a.active{color:var(--brand-green)}
 html body .page-tabs a.active{border-color:var(--brand-red)}
 html body .page-banner{background:var(--brand-green-dark)}
 html body .page-banner-shade{background:linear-gradient(90deg,rgba(37,66,31,.72),rgba(63,104,39,.2) 80%),linear-gradient(0deg,rgba(36,61,30,.55),transparent 55%)}
-html body .info-card,html body .project-process article,html body .mission-panel,html body .notice-panel,html body .address-card{background:var(--brand-sage)}
+html body .info-card,html body .project-process article,html body .mission-panel,html body .notice-panel,html body .address-card{background:var(--brand-yellow-soft)}
 html body .vision-panel,html body .bank-panel{background:var(--brand-green-dark)}
 html body .info-card-number,html body .volunteer-bullets svg,html body .contact-links svg{color:var(--brand-red)}
 html body .mission-panel li svg,html body .check-list svg{color:var(--brand-green)}
 html body .values-row b,html body .district-list span{color:var(--brand-green-dark)}
 html body .page-tabs a.active{border-bottom-color:var(--brand-red)}
 html body .donate-note{background:#fff1e9;border-left-color:var(--brand-red)}
-html body .footer.shell{background:var(--brand-sage);box-shadow:0 0 0 100vmax var(--brand-sage)}
+html body .footer.shell{background:var(--brand-yellow-soft);box-shadow:0 0 0 100vmax var(--brand-yellow-soft)}
 html body .footer .footer-brand{color:var(--brand-red)}
 
 .ah-hero{background:var(--brand-green-dark)}
 .ah-hero-wash{background:linear-gradient(180deg,rgba(43,73,33,.24) 0%,rgba(67,102,37,.08) 42%,rgba(255,253,246,.08) 70%,var(--brand-paper) 100%)}
-.ah-hero h1 .ah-outline{background:var(--brand-red);color:#fff}
-.ah-badge{background:var(--brand-red-soft);color:var(--brand-red-dark)}
-.ah-button{background:var(--brand-red);color:#fff}
-.ah-button:hover{background:var(--brand-red-dark)}
+.ah-hero h1 .ah-outline{background:var(--brand-yellow);color:var(--brand-green-dark)}
+.ah-badge{background:var(--brand-yellow);color:var(--brand-green-dark)}
+.ah-button{background:var(--brand-green);color:#fff}
+.ah-button:hover{background:var(--brand-green-dark)}
 .ah-standfor{background:var(--brand-green-dark)}
 .ah-standfor:after{background:linear-gradient(90deg,rgba(35,54,29,.42),rgba(55,78,34,.17)),linear-gradient(0deg,rgba(34,49,27,.35),transparent 65%)}
-.ah-focus-list button.active,.ah-focus-list button:hover{background:var(--brand-red-soft);color:var(--brand-red-dark)}
-.ah-focus-list button>span{background:var(--brand-sage);color:var(--brand-green)}
-.ah-focus-list button.active>span{background:var(--brand-red);color:#fff}
-.ah-wave-band{stroke:#f7e9e4}
-.ah-wave-text{fill:var(--brand-red-dark)}
-.ah-ticker,.ah-impact-ticker,.ah-volunteer-ticker{background:#f7e9e4;color:var(--brand-red-dark)}
-.ah-goal-row{background:#f3f4ee}
-.ah-goal-stamp{border-color:#d7dfd1;color:var(--brand-green-dark)}
+.ah-focus-list button.active,.ah-focus-list button:hover{background:#fbf2b8;color:var(--brand-green-dark)}
+.ah-focus-list button>span{background:#f8f1cf;color:var(--brand-green)}
+.ah-focus-list button.active>span{background:var(--brand-green);color:#fff}
+.ah-wave-band{stroke:#fff5bd}
+.ah-wave-text{fill:var(--brand-green-dark)}
+.ah-ticker,.ah-impact-ticker,.ah-volunteer-ticker{background:#fff4b7;color:var(--brand-green-dark)}
+.ah-goal-row{background:#fffaf0}
+.ah-goal-stamp{border-color:#e7d77e;color:var(--brand-green-dark)}
 .ah-impact-grid article{background:var(--brand-green-dark)}
 .ah-impact-grid article:after{background:linear-gradient(0deg,rgba(37,59,31,.68),transparent 65%)}
-.ah-impact-ribbon .ah-wave-band,.ah-volunteer-ribbon .ah-wave-band{stroke:#f7e9e4}
-.ah-recognitions{background:#f3f4ee}
-.ah-news{background:var(--brand-paper)}
-.ah-news-grid a{background:var(--brand-sage)}
-.ah-faq-list article{background:#f3f4ee}
+.ah-impact-ribbon .ah-wave-band,.ah-volunteer-ribbon .ah-wave-band{stroke:#fff5bd}
+.ah-recognitions{background:#f6eebf}
+.ah-news{background:#fffdf6}
+.ah-news-grid a{background:#f6eebf}
+.ah-faq-list article{background:#fbf2ca}
 .ah-faq-list button,.ah-faq-list button svg{color:var(--brand-ink)}
-.ah-volunteer{background:#6e9a55}
-.ah-volunteer:after{background:linear-gradient(90deg,rgba(37,72,53,.76),rgba(58,102,67,.4) 58%,rgba(42,83,58,.38))}
-.ah-volunteer-copy .ah-badge{background:#fff;color:var(--brand-red-dark)}
-.ah-volunteer ul{border-color:#ffffff8c;background:#f7f5ebd9;color:var(--brand-green-dark)}
+.ah-volunteer{background:#739e3d}
+.ah-volunteer:after{background:linear-gradient(90deg,rgba(51,84,37,.72),rgba(95,133,48,.32) 58%,rgba(53,86,37,.3))}
+.ah-volunteer-copy .ah-badge{background:var(--brand-yellow);color:var(--brand-green-dark)}
+.ah-volunteer ul{border-color:#ffffff8c;background:#fbf4cfdd;color:var(--brand-green-dark)}
 .ah-volunteer li svg{color:var(--brand-red)}
- .ah-volunteer-form .ah-button{background:var(--brand-red);color:#fff}
-html body .footer.shell{background:var(--brand-sage);box-shadow:0 0 0 100vmax var(--brand-sage);clip-path:inset(0 -100vmax)}
+.ah-volunteer-form .ah-button{background:var(--brand-green);color:#fff}
+html body .footer.shell{background:var(--brand-yellow-soft);box-shadow:0 0 0 100vmax var(--brand-yellow-soft);clip-path:inset(0 -100vmax)}
 .footer-wordmark{color:var(--brand-green-dark)}
-.footer-wordmark span{background:linear-gradient(90deg,var(--brand-red) 0%,var(--brand-yellow) 48%,var(--brand-green) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.footer-wordmark span{background:linear-gradient(90deg,#f3dc55 0%,#79a93c 50%,#ed4d2e 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 html body .site-header .brand{width:76px;height:58px;flex:0 0 76px;overflow:hidden}
 html body .site-header .brand img{display:block;width:100%;height:100%;border-radius:0;object-fit:contain}
 @media(max-width:600px){html body .site-header .brand{width:70px;height:54px;flex-basis:70px}}
