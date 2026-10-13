@@ -37,6 +37,8 @@ const recognitions = [
   { image: awardMLA, label: 'TEHRI', copy: 'Recognition from the Member of Legislative Assembly, Tehri.' },
   { image: awardMinister, label: 'UTTARAKHAND', copy: 'Appreciation from Cabinet Minister Shri Subodh Uniyal.' },
 ];
+const impactRibbonText = Array(10).fill('Trusted by communities · Proven by impact · Together for a better future').join(' · ');
+const volunteerRibbonText = Array(12).fill('Join Pragya Foundation').join(' · ');
 const newsImages = Object.entries(import.meta.glob<string>('./assets/print-*', { eager: true, query: '?url', import: 'default' }))
   .sort(([a], [b]) => a.localeCompare(b)).slice(0, 5).map(([path, image], index) => ({ path, image, label: `Media coverage ${String(index + 1).padStart(2, '0')}` }));
 const faqs = [
@@ -122,12 +124,12 @@ export default function HomePage() {
       <svg className="ah-impact-ribbon ah-impact-ribbon-desktop" viewBox="0 0 1920 240" preserveAspectRatio="none" aria-hidden="true">
         <defs><path id="pragya-impact-wave-desktop" d="M -150 230 C 250 230 440 210 690 172 C 940 134 1120 68 1390 42 C 1620 20 1800 38 2070 66"/></defs>
         <path className="ah-wave-band" d="M -150 230 C 250 230 440 210 690 172 C 940 134 1120 68 1390 42 C 1620 20 1800 38 2070 66"/>
-        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[2] = node; }} href="#pragya-impact-wave-desktop" startOffset="20%">Trusted by communities&nbsp; · &nbsp;Proven by impact&nbsp; · &nbsp;Together for a better future&nbsp; · &nbsp;Trusted by communities&nbsp; · &nbsp;Proven by impact&nbsp; · &nbsp;Together for a better future&nbsp; · &nbsp;Trusted by communities&nbsp; · &nbsp;</textPath></text>
+        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[2] = node; }} href="#pragya-impact-wave-desktop" startOffset="20%">{impactRibbonText}</textPath></text>
       </svg>
       <svg className="ah-impact-ribbon ah-impact-ribbon-mobile" viewBox="0 0 430 210" preserveAspectRatio="none" aria-hidden="true">
         <defs><path id="pragya-impact-wave-mobile" d="M -65 200 C 90 200 145 183 205 145 C 270 105 335 45 490 38"/></defs>
         <path className="ah-wave-band" d="M -65 200 C 90 200 145 183 205 145 C 270 105 335 45 490 38"/>
-        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[3] = node; }} href="#pragya-impact-wave-mobile" startOffset="20%">Trusted by communities&nbsp; · &nbsp;Proven by impact&nbsp; · &nbsp;Together for a better future&nbsp; · &nbsp;Trusted by communities&nbsp; · &nbsp;Proven by impact&nbsp; · &nbsp;</textPath></text>
+        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[3] = node; }} href="#pragya-impact-wave-mobile" startOffset="20%">{impactRibbonText}</textPath></text>
       </svg>
     </section>
 
@@ -154,12 +156,12 @@ export default function HomePage() {
       <svg className="ah-volunteer-ribbon ah-volunteer-ribbon-desktop" viewBox="0 0 1920 300" preserveAspectRatio="none" aria-hidden="true">
         <defs><path id="pragya-volunteer-wave-desktop" d="M -150 285 C 250 280 440 250 690 205 C 940 160 1120 100 1390 70 C 1620 45 1800 60 2070 92"/></defs>
         <path className="ah-wave-band" d="M -150 285 C 250 280 440 250 690 205 C 940 160 1120 100 1390 70 C 1620 45 1800 60 2070 92"/>
-        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[4] = node; }} href="#pragya-volunteer-wave-desktop" startOffset="20%">Join Pragya Foundation&nbsp; · &nbsp;Join Pragya Foundation&nbsp; · &nbsp;Join Pragya Foundation&nbsp; · &nbsp;Join Pragya Foundation&nbsp; · &nbsp;Join Pragya Foundation&nbsp; · &nbsp;</textPath></text>
+        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[4] = node; }} href="#pragya-volunteer-wave-desktop" startOffset="20%">{volunteerRibbonText}</textPath></text>
       </svg>
       <svg className="ah-volunteer-ribbon ah-volunteer-ribbon-mobile" viewBox="0 0 430 250" preserveAspectRatio="none" aria-hidden="true">
         <defs><path id="pragya-volunteer-wave-mobile" d="M -65 238 C 90 238 145 218 205 178 C 270 138 335 78 490 70"/></defs>
         <path className="ah-wave-band" d="M -65 238 C 90 238 145 218 205 178 C 270 138 335 78 490 70"/>
-        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[5] = node; }} href="#pragya-volunteer-wave-mobile" startOffset="20%">Join Pragya Foundation&nbsp; · &nbsp;Join Pragya Foundation&nbsp; · &nbsp;Join Pragya Foundation&nbsp; · &nbsp;Join Pragya Foundation&nbsp; · &nbsp;Join Pragya Foundation&nbsp; · &nbsp;</textPath></text>
+        <text className="ah-wave-text"><textPath ref={(node) => { if (node) ribbonTextRefs.current[5] = node; }} href="#pragya-volunteer-wave-mobile" startOffset="20%">{volunteerRibbonText}</textPath></text>
       </svg>
     </section>
   </main>;
