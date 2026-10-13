@@ -27,6 +27,7 @@ const groups = [
 function Footer() {
   const footerRef = useRef<HTMLElement>(null);
   const wordmarkRef = useRef<HTMLSpanElement>(null);
+  const { pathname } = useLocation();
   useLayoutEffect(() => {
     if (!footerRef.current || !wordmarkRef.current?.parentElement) return;
     const wordmark = wordmarkRef.current;
@@ -39,12 +40,17 @@ function Footer() {
       const tween = gsap.fromTo(wordmark, { yPercent: 115 }, {
         yPercent: -32,
         ease: 'none',
-        scrollTrigger: { trigger, start: 'top bottom', end: 'top 45%', scrub: 0.8 },
+        scrollTrigger: { trigger, start: 'top bottom', end: 'top 45%', scrub: 0.8, invalidateOnRefresh: true },
       });
       return () => { tween.scrollTrigger?.kill(); tween.kill(); };
     });
-    return () => { media.revert(); gsap.set(wordmark, { clearProps: 'transform' }); };
-  }, []);
+    const refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
+    return () => {
+      cancelAnimationFrame(refreshFrame);
+      media.revert();
+      gsap.set(wordmark, { clearProps: 'transform' });
+    };
+  }, [pathname]);
   return <footer ref={footerRef} className="footer shell"><div className="footer-main">
     <div className="footer-intro"><Link className="brand footer-brand" to="/"><span>Pragya</span></Link><p>Empowering women.<br/>Improving lives.<br/>Caring for our environment.</p><div className="footer-social"><a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://www.instagram.com/" aria-label="Instagram">ig</a><a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a></div></div>
     <div><span className="footer-label">PAGES</span><Link to="/about-us">About Us</Link><Link to="/about-us/about-the-foundation">The Foundation</Link><Link to="/about-us/about-pragya-dixit">Pragya Dixit</Link><Link to="/about-us/mission-vision-and-values">Mission, Vision &amp; Values</Link><Link to="/about-us/awards-and-accolades">Awards &amp; Accolades</Link></div>
