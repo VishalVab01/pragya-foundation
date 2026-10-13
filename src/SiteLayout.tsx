@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
-import logo from './assets/pragya-logo.jpg';
 
 const groups = [
   { label: 'About Us', to: '/about-us', links: [
@@ -22,11 +21,11 @@ const groups = [
 
 function Footer() {
   return <footer className="footer shell"><div className="footer-main">
-    <Link className="brand footer-brand" to="/"><img src={logo} alt=""/><span>Pragya<br/><small>FOUNDATION</small></span></Link>
-    <p>Empowering women.<br/>Improving lives.<br/>Caring for our environment.</p>
-    <div><span className="footer-label">EXPLORE</span><Link to="/about-us">About Us</Link><Link to="/projects">Projects</Link><Link to="/in-the-news-print-media">In the News</Link><Link to="/photo-gallery">Photo Gallery</Link></div>
-    <div><span className="footer-label">SAY HELLO</span><a href="mailto:pragyafoundation2024@gmail.com">pragyafoundation2024@gmail.com</a><a href="tel:+919958591494">+91 99585 91494</a><p>305, Deep Shikha, 8, Rajendra Place,<br/>New Delhi – 110008</p></div>
-  </div><div className="footer-bottom"><span>© 2026 Pragya Foundation</span><span>Working for women, children &amp; a sustainable future.</span><Link to="/contact-us">Contact us</Link></div></footer>;
+    <div className="footer-intro"><Link className="brand footer-brand" to="/"><span>Pragya</span></Link><p>Empowering women.<br/>Improving lives.<br/>Caring for our environment.</p><div className="footer-social"><a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://www.instagram.com/" aria-label="Instagram">ig</a><a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a></div></div>
+    <div><span className="footer-label">PAGES</span><Link to="/about-us">About Us</Link><Link to="/about-us/about-the-foundation">The Foundation</Link><Link to="/about-us/about-pragya-dixit">Pragya Dixit</Link><Link to="/about-us/mission-vision-and-values">Mission, Vision &amp; Values</Link><Link to="/about-us/awards-and-accolades">Awards &amp; Accolades</Link></div>
+    <div><span className="footer-label">EXPLORE</span><Link to="/projects">Projects</Link><Link to="/projects/impact">Impact</Link><Link to="/projects/work-area">Work Area</Link><Link to="/in-the-news-print-media">Print Media</Link><Link to="/in-the-news-print-media/in-the-news">Electronic Media</Link><Link to="/photo-gallery">Photo Gallery</Link></div>
+    <div><span className="footer-label">GET INVOLVED</span><Link to="/get-involved">Ways to Get Involved</Link><Link to="/get-involved/become-a-volunteer">Volunteer</Link><Link to="/get-involved/donate">Donate</Link><Link to="/contact-us">Contact Us</Link><span className="footer-label footer-address-label">OUR ADDRESS</span><p>305, Deep Shikha, 8, Rajendra Place,<br/>New Delhi – 110008</p><a href="mailto:pragyafoundation2024@gmail.com">pragyafoundation2024@gmail.com</a></div>
+  </div><div className="footer-bottom"><span>© 2026 Pragya Foundation</span><span>Working for women, children &amp; a sustainable future.</span><a href="tel:+919958591494">+91 99585 91494</a></div></footer>;
 }
 
 function PageTitles() {
@@ -54,17 +53,14 @@ export default function SiteLayout() {
   return <>
     <PageTitles />
     <header className="site-header shell">
-      <Link className="brand" to="/" aria-label="Pragya Foundation home"><img src={logo} alt=""/><span>Pragya<br/><small>FOUNDATION</small></span></Link>
+      <Link className="brand" to="/" aria-label="Pragya Foundation home"><span>Pragya</span></Link>
       <button className="menu-toggle" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X/> : <Menu/>}</button>
       <nav className={menuOpen ? 'nav open' : 'nav'} aria-label="Main navigation">
-        <NavLink to="/" end>Home</NavLink>
         {groups.slice(0, 3).map((group) => <details className="nav-dropdown" key={group.label}>
           <summary>{group.label}<ChevronDown size={12}/></summary>
           <div className="nav-menu">{group.links.map(([label, href]) => <Link key={href} to={href}>{label}</Link>)}</div>
         </details>)}
-        <NavLink to="/photo-gallery">Photo Gallery</NavLink>
-        <details className="nav-dropdown"><summary>Get Involved<ChevronDown size={12}/></summary><div className="nav-menu">{groups[3].links.map(([label, href]) => <Link key={href} to={href}>{label}</Link>)}</div></details>
-        <NavLink to="/contact-us">Contact</NavLink>
+        <NavLink to="/get-involved/become-a-volunteer">Volunteer</NavLink>
         <Link className="nav-cta" to="/get-involved/donate">Donate now <ArrowUpRight size={15}/></Link>
       </nav>
     </header>
