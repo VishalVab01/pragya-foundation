@@ -376,3 +376,57 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
   html body .footer .footer-bottom span:nth-child(2){display:block;grid-column:1/-1;grid-row:2}
   html body .footer .footer-bottom a{font-size:9px;white-space:nowrap}
 }
+
+/* Pragya Foundation brand palette: leaf green, marigold, and vermilion. */
+:root{--brand-green:#557d2d;--brand-green-dark:#344f29;--brand-yellow:#f3dc55;--brand-yellow-soft:#fbf4cf;--brand-red:#ed4d2e;--brand-ink:#292d25;--brand-paper:#fffdf6;--blue:var(--brand-green);--blue-deep:var(--brand-green-dark);--orange:var(--brand-red);--cream:var(--brand-paper)}
+body{background:var(--brand-paper);color:var(--brand-ink)}
+html body .site-header .brand,html body .footer .footer-brand{color:var(--brand-red)}
+html body .site-header .nav>a.active,html body .site-header .nav-dropdown[open]>summary{color:var(--brand-red)}
+html body .site-header .nav-cta,html body .nav .nav-cta,html body .button,html body .ah-button{background:var(--brand-green);color:#fff}
+html body .site-header .nav-cta:hover,html body .nav .nav-cta:hover,html body .button:hover,html body .ah-button:hover{background:var(--brand-green-dark)}
+html body .text-link,html body .ah-text-link,html body .page-tabs a.active{color:var(--brand-green)}
+html body .page-tabs a.active{border-color:var(--brand-red)}
+html body .page-banner{background:var(--brand-green-dark)}
+html body .page-banner-shade{background:linear-gradient(90deg,rgba(37,66,31,.72),rgba(63,104,39,.2) 80%),linear-gradient(0deg,rgba(36,61,30,.55),transparent 55%)}
+html body .info-card,html body .project-process article,html body .mission-panel,html body .notice-panel,html body .address-card{background:var(--brand-yellow-soft)}
+html body .vision-panel,html body .bank-panel{background:var(--brand-green-dark)}
+html body .info-card-number,html body .volunteer-bullets svg,html body .contact-links svg{color:var(--brand-red)}
+html body .mission-panel li svg,html body .check-list svg{color:var(--brand-green)}
+html body .values-row b,html body .district-list span{color:var(--brand-green-dark)}
+html body .page-tabs a.active{border-bottom-color:var(--brand-red)}
+html body .donate-note{background:#fff1e9;border-left-color:var(--brand-red)}
+html body .footer.shell{background:var(--brand-yellow-soft);box-shadow:0 0 0 100vmax var(--brand-yellow-soft)}
+html body .footer .footer-brand{color:var(--brand-red)}
+
+.ah-hero{background:var(--brand-green-dark)}
+.ah-hero-wash{background:linear-gradient(180deg,rgba(43,73,33,.24) 0%,rgba(67,102,37,.08) 42%,rgba(255,253,246,.08) 70%,var(--brand-paper) 100%)}
+.ah-hero h1 .ah-outline{background:var(--brand-yellow);color:var(--brand-green-dark)}
+.ah-badge{background:var(--brand-yellow);color:var(--brand-green-dark)}
+.ah-button{background:var(--brand-green);color:#fff}
+.ah-button:hover{background:var(--brand-green-dark)}
+.ah-standfor{background:var(--brand-green-dark)}
+.ah-standfor:after{background:linear-gradient(90deg,rgba(35,54,29,.42),rgba(55,78,34,.17)),linear-gradient(0deg,rgba(34,49,27,.35),transparent 65%)}
+.ah-focus-list button.active,.ah-focus-list button:hover{background:#fbf2b8;color:var(--brand-green-dark)}
+.ah-focus-list button>span{background:#f8f1cf;color:var(--brand-green)}
+.ah-focus-list button.active>span{background:var(--brand-green);color:#fff}
+.ah-wave-band{stroke:#fff5bd}
+.ah-wave-text{fill:var(--brand-green-dark)}
+.ah-ticker,.ah-impact-ticker,.ah-volunteer-ticker{background:#fff4b7;color:var(--brand-green-dark)}
+.ah-goal-row{background:#fffaf0}
+.ah-goal-stamp{border-color:#e7d77e;color:var(--brand-green-dark)}
+.ah-impact-grid article{background:var(--brand-green-dark)}
+.ah-impact-grid article:after{background:linear-gradient(0deg,rgba(37,59,31,.68),transparent 65%)}
+.ah-impact-ribbon .ah-wave-band,.ah-volunteer-ribbon .ah-wave-band{stroke:#fff5bd}
+.ah-recognitions{background:#f6eebf}
+.ah-news{background:#fffdf6}
+.ah-news-grid a{background:#f6eebf}
+.ah-faq-list article{background:#fbf2ca}
+.ah-faq-list button,.ah-faq-list button svg{color:var(--brand-ink)}
+.ah-volunteer{background:#739e3d}
+.ah-volunteer:after{background:linear-gradient(90deg,rgba(51,84,37,.72),rgba(95,133,48,.32) 58%,rgba(53,86,37,.3))}
+.ah-volunteer-copy .ah-badge{background:var(--brand-yellow);color:var(--brand-green-dark)}
+.ah-volunteer ul{border-color:#ffffff8c;background:#fbf4cfdd;color:var(--brand-green-dark)}
+.ah-volunteer li svg{color:var(--brand-red)}
+.ah-volunteer-form .ah-button{background:var(--brand-green);color:#fff}
+html body .footer.shell{background:var(--brand-yellow-soft);box-shadow:0 0 0 100vmax var(--brand-yellow-soft)}
+.footer-wordmark{color:var(--brand-green-dark)}
