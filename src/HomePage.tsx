@@ -6,6 +6,7 @@ import communityWork from './assets/community-work.jpeg';
 import womenOutreach from './assets/women-outreach.jpeg';
 import projectOne from './assets/project-01.jpeg';
 import projectTwo from './assets/project-02.jpeg';
+import pragyaHero from './assets/pragya-hero.png';
 import awardMP from './assets/award-mp.jpg';
 import awardMLA from './assets/award-mla.jpg';
 import awardMinister from './assets/award-minister.jpg';
@@ -61,7 +62,7 @@ export default function HomePage() {
   }
   return <main className="altruist-home" id="top">
     <section className="ah-hero">
-      <img className="ah-hero-image" src={womenOutreach} alt="Pragya Foundation community outreach in Uttarakhand" />
+      <img className="ah-hero-image" src={pragyaHero} alt="Women learning sewing and textile skills through Pragya Foundation" />
       <div className="ah-hero-wash" />
       <div className="ah-hero-copy">
         <h1><span>Let’s create a</span><span className="ah-outline">real impact</span><span>with you</span></h1>

@@ -225,3 +225,4 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
   .ah-volunteer-ribbon-mobile .ah-wave-text{font-size:15px}
   .ah-volunteer{padding-bottom:140px}
 }
+@media(max-width:600px){.ah-hero-copy{top:13%}}
