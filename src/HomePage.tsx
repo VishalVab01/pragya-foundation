@@ -7,6 +7,7 @@ import womenOutreach from './assets/women-outreach.jpeg';
 import projectOne from './assets/project-01.jpeg';
 import projectTwo from './assets/project-02.jpeg';
 import pragyaHero from './assets/pragya-hero.png';
+import standforBackground from './assets/standfor-background.png';
 import awardMP from './assets/award-mp.jpg';
 import awardMLA from './assets/award-mla.jpg';
 import awardMinister from './assets/award-minister.jpg';
@@ -91,7 +92,7 @@ export default function HomePage() {
     </section>
 
     <section className="ah-standfor">
-      <div className="ah-standfor-bg"><img src={projectOne} alt=""/></div>
+      <div className="ah-standfor-bg"><img src={standforBackground} alt=""/></div>
       <div className="ah-standfor-card">
         <div className="ah-focus-list"><h3>What We Stand For</h3>{focusAreas.map(({ title, icon: Icon }, index) => <button className={activeFocus === index ? 'active' : ''} key={title} onClick={() => setActiveFocus(index)}><span><Icon size={20}/></span>{title}</button>)}</div>
         <div className="ah-focus-feature"><img src={[communityWork, womenOutreach, projectOne, projectTwo][activeFocus]} alt="Pragya Foundation community work"/><div><span>PRAGYA FOUNDATION</span><h3>{focusAreas[activeFocus].copy}</h3></div></div>
