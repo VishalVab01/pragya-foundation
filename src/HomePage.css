@@ -212,3 +212,16 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
   .ah-impact-ribbon-mobile .ah-wave-band{stroke-width:51px}
   .ah-impact-ribbon-mobile .ah-wave-text{font-size:15px}
 }
+
+.ah-volunteer-ribbon{position:absolute;z-index:2;inset:auto 0 -78px;width:100%;height:270px;overflow:visible;pointer-events:none}
+.ah-volunteer-ribbon-mobile{display:none}
+.ah-volunteer-ribbon .ah-wave-band{stroke-width:68px}
+.ah-volunteer-ribbon .ah-wave-text{font-size:21px}
+.ah-volunteer-copy,.ah-volunteer-form{z-index:3}
+@media(max-width:600px){
+  .ah-volunteer-ribbon-desktop{display:none}
+  .ah-volunteer-ribbon-mobile{display:block;inset:auto 0 -72px;height:220px}
+  .ah-volunteer-ribbon-mobile .ah-wave-band{stroke-width:49px}
+  .ah-volunteer-ribbon-mobile .ah-wave-text{font-size:15px}
+  .ah-volunteer{padding-bottom:140px}
+}
