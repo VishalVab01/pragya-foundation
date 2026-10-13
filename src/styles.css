@@ -18,3 +18,8 @@
 .nav-dropdown summary{display:flex;align-items:center;gap:4px}.nav-dropdown summary svg{opacity:.6}.nav-dropdown[open] summary svg{transform:rotate(180deg)}
 
 .section-label,.eyebrow,.mini-label,.impact-foot,.goal-caption span,.gallery-item span{font-family:"Fragment Mono",monospace;letter-spacing:.08em}
+
+.footer.shell{position:relative;overflow:hidden;padding-bottom:0!important}
+.footer-wordmark{height:clamp(115px,20vw,250px);margin:20px calc((1160px - 100vw)/2) 0;overflow:hidden;display:flex;justify-content:center;align-items:flex-end;line-height:.72;color:#165471;pointer-events:none}
+.footer-wordmark span{display:block;font-size:clamp(130px,28vw,430px);font-weight:700;line-height:.72;letter-spacing:-.095em;white-space:nowrap}
+@media(max-width:600px){.footer-wordmark{height:118px;margin:16px -18px 0}.footer-wordmark span{font-size:32vw}}

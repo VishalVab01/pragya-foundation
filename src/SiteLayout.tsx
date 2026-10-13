@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
+import { gsap } from 'gsap';
 
 const groups = [
   { label: 'About Us', to: '/about-us', links: [
@@ -20,12 +21,28 @@ const groups = [
 ];
 
 function Footer() {
-  return <footer className="footer shell"><div className="footer-main">
+  const footerRef = useRef<HTMLElement>(null);
+  const wordmarkRef = useRef<HTMLSpanElement>(null);
+  useLayoutEffect(() => {
+    if (!footerRef.current || !wordmarkRef.current) return;
+    const wordmark = wordmarkRef.current;
+    const footer = footerRef.current;
+    const checkVisibility = () => {
+      if (footer.getBoundingClientRect().top < window.innerHeight * 0.92) {
+        gsap.fromTo(wordmark, { yPercent: 110, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: 1.15, ease: 'power3.out' });
+        window.removeEventListener('scroll', checkVisibility);
+      }
+    };
+    window.addEventListener('scroll', checkVisibility, { passive: true });
+    requestAnimationFrame(checkVisibility);
+    return () => { window.removeEventListener('scroll', checkVisibility); gsap.killTweensOf(wordmark); gsap.set(wordmark, { clearProps: 'transform,opacity,visibility' }); };
+  }, []);
+  return <footer ref={footerRef} className="footer shell"><div className="footer-main">
     <div className="footer-intro"><Link className="brand footer-brand" to="/"><span>Pragya</span></Link><p>Empowering women.<br/>Improving lives.<br/>Caring for our environment.</p><div className="footer-social"><a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://www.instagram.com/" aria-label="Instagram">ig</a><a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a></div></div>
     <div><span className="footer-label">PAGES</span><Link to="/about-us">About Us</Link><Link to="/about-us/about-the-foundation">The Foundation</Link><Link to="/about-us/about-pragya-dixit">Pragya Dixit</Link><Link to="/about-us/mission-vision-and-values">Mission, Vision &amp; Values</Link><Link to="/about-us/awards-and-accolades">Awards &amp; Accolades</Link></div>
     <div><span className="footer-label">EXPLORE</span><Link to="/projects">Projects</Link><Link to="/projects/impact">Impact</Link><Link to="/projects/work-area">Work Area</Link><Link to="/in-the-news-print-media">Print Media</Link><Link to="/in-the-news-print-media/in-the-news">Electronic Media</Link><Link to="/photo-gallery">Photo Gallery</Link></div>
     <div><span className="footer-label">GET INVOLVED</span><Link to="/get-involved">Ways to Get Involved</Link><Link to="/get-involved/become-a-volunteer">Volunteer</Link><Link to="/get-involved/donate">Donate</Link><Link to="/contact-us">Contact Us</Link><span className="footer-label footer-address-label">OUR ADDRESS</span><p>305, Deep Shikha, 8, Rajendra Place,<br/>New Delhi – 110008</p><a href="mailto:pragyafoundation2024@gmail.com">pragyafoundation2024@gmail.com</a></div>
-  </div><div className="footer-bottom"><span>© 2026 Pragya Foundation</span><span>Working for women, children &amp; a sustainable future.</span><a href="tel:+919958591494">+91 99585 91494</a></div></footer>;
+  </div><div className="footer-bottom"><span>© 2026 Pragya Foundation</span><span>Working for women, children &amp; a sustainable future.</span><a href="tel:+919958591494">+91 99585 91494</a></div><div className="footer-wordmark" aria-hidden="true"><span ref={wordmarkRef}>PRAGYA</span></div></footer>;
 }
 
 function PageTitles() {
