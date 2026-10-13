@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import pragyaLogo from './assets/pragya-logo.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +78,7 @@ export default function SiteLayout() {
   return <>
     <PageTitles />
     <header className="site-header shell">
-      <Link className="brand" to="/" aria-label="Pragya Foundation home"><span>Pragya</span></Link>
+      <Link className="brand" to="/" aria-label="Pragya Foundation home"><img src={pragyaLogo} alt="Pragya Foundation"/></Link>
       <button className="menu-toggle" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X/> : <Menu/>}</button>
       <nav className={menuOpen ? 'nav open' : 'nav'} aria-label="Main navigation">
         {groups.slice(0, 3).map((group) => <details className="nav-dropdown" key={group.label}>
