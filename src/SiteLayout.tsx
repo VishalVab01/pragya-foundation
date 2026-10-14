@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, Facebook, Instagram, Mail, MapPin, MapPinned, Menu, Phone, X } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import pragyaLogo from './assets/pragya-logo.jpg';
@@ -116,6 +116,22 @@ export default function SiteLayout() {
         </details>)}
         <NavLink to="/get-involved/become-a-volunteer">Volunteer</NavLink>
         <span className="nav-cta" aria-disabled="true">Donate now <ArrowUpRight size={15}/></span>
+        <div className="nav-contact-actions" aria-label="Quick contact links">
+          <div className="nav-contact-item">
+            <button type="button" className="nav-contact-icon" aria-label="Email Pragya Foundation" title="Email"><Mail size={16}/></button>
+            <div className="nav-contact-tip"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info%40pragyafoundation.com" target="_blank" rel="noreferrer"><span>Send email</span><b>info@pragyafoundation.com</b></a></div>
+          </div>
+          <div className="nav-contact-item">
+            <button type="button" className="nav-contact-icon" aria-label="Call Pragya Foundation" title="Contact us"><Phone size={16}/></button>
+            <div className="nav-contact-tip"><a href="tel:+919958591494"><span>Contact us</span><b>+91-99585 91494</b></a></div>
+          </div>
+          <div className="nav-contact-item">
+            <button type="button" className="nav-contact-icon" aria-label="View foundation address" title="Address"><MapPin size={16}/></button>
+            <div className="nav-contact-tip nav-address-tip"><span>Address</span><b>District Tehri Garhwal,<br/>Uttarakhand 249155</b><a className="nav-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=District+Tehri+Garhwal%2C+Uttarakhand+249155" target="_blank" rel="noreferrer" aria-label="Open address in Google Maps" title="Open in Google Maps"><MapPinned size={19}/><span>Open in Google Maps</span></a></div>
+          </div>
+          <a className="nav-contact-icon nav-social-icon" href="https://www.instagram.com/pragyafoundationofficial/" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram"><Instagram size={16}/></a>
+          <a className="nav-contact-icon nav-social-icon" href="https://www.facebook.com/profile.php?id=61567811435171" target="_blank" rel="noreferrer" aria-label="Facebook" title="Facebook"><Facebook size={16}/></a>
+        </div>
       </nav>
     </header>
     <Outlet />
