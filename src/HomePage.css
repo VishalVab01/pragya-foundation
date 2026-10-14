@@ -160,10 +160,10 @@ html body .footer.shell{width:100%;max-width:none;padding:67px max(calc((100% - 
 /* Compact, accessible contact actions in the shared navigation. */
 html body .site-header.shell{width:min(1120px,calc(100% - 40px))}
 html body .site-header .nav{gap:14px}
-.nav-contact-actions{display:flex;align-items:center;gap:7px;margin-left:2px}
+.nav-contact-actions{display:flex;align-items:center;gap:14px;margin-left:0}
 .nav-contact-item{position:relative;display:flex;align-items:center}
-.nav-contact-label{padding:7px 0;border:0;background:none;color:#879297;font:600 13px/1 'Instrument Sans',sans-serif;white-space:nowrap;cursor:pointer;transition:color .18s ease}
-.nav-contact-label:hover,.nav-contact-item:focus-within>.nav-contact-label{color:#527d35}
+.nav-contact-label{padding:7px 0;border:0;background:none;color:#879297;font:600 15px/1 'Instrument Sans',sans-serif;white-space:nowrap;cursor:pointer;transition:color .18s ease}
+.nav-contact-label:hover,.nav-contact-item:focus-within>.nav-contact-label{color:var(--brand-red)}
 .nav-contact-icon{position:relative;display:grid;flex:none;width:30px;height:30px;padding:0;place-items:center;border:1px solid #e5e9e4;border-radius:50%;background:#fff;color:#48656e;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .nav-contact-icon:hover,.nav-contact-item:focus-within>.nav-contact-icon{border-color:#dbe8d2;background:#f2f7ed;color:#527d35}
 .nav-social-icon{text-decoration:none}
