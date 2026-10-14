@@ -115,7 +115,7 @@ export default function SiteLayout() {
           <div className="nav-menu">{group.links.map(([label, href]) => <Link key={href} to={href}>{label}</Link>)}</div>
         </details>)}
         <NavLink to="/get-involved/become-a-volunteer">Volunteer</NavLink>
-        <Link className="nav-cta" to="/get-involved/donate">Donate now <ArrowUpRight size={15}/></Link>
+        <span className="nav-cta" aria-disabled="true">Donate now <ArrowUpRight size={15}/></span>
       </nav>
     </header>
     <Outlet />

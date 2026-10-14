@@ -153,7 +153,7 @@ export default function HomePage() {
       <div className="ah-hero-wash" />
       <div className="ah-hero-copy">
         <h1><span>Let’s create a</span><span className="ah-outline">real impact</span><span>with you</span></h1>
-        <a className="ah-button ah-hero-button" href="/get-involved/donate">Donate now <ArrowRight size={17}/></a>
+        <span className="ah-button ah-hero-button" aria-disabled="true">Donate now <ArrowRight size={17}/></span>
       </div>
       <div className="ah-donors"><div className="ah-avatar-stack"><img src={communityWork} alt=""/><img src={womenOutreach} alt=""/><img src={projectOne} alt=""/><img src={projectTwo} alt=""/></div><span><b>30,000+</b> women benefited</span></div>
     </section>
