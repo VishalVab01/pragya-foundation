@@ -115,7 +115,6 @@ export default function SiteLayout() {
           <div className="nav-menu">{group.links.map(([label, href]) => <Link key={href} to={href}>{label}</Link>)}</div>
         </details>)}
         <NavLink to="/get-involved/become-a-volunteer">Volunteer</NavLink>
-        <span className="nav-cta" aria-disabled="true">Donate now <ArrowUpRight size={15}/></span>
         <div className="nav-contact-actions" aria-label="Quick contact links">
           <div className="nav-contact-item">
             <button type="button" className="nav-contact-label">Send Email</button>
@@ -134,6 +133,7 @@ export default function SiteLayout() {
             <div className="nav-contact-tip nav-social-tip"><a href="https://www.instagram.com/pragyafoundationofficial/" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={18}/><span>Instagram</span></a><a href="https://www.facebook.com/profile.php?id=61567811435171" target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook size={18}/><span>Facebook</span></a></div>
           </div>
         </div>
+        <span className="nav-cta" aria-disabled="true">Donate now <ArrowUpRight size={15}/></span>
       </nav>
     </header>
     <Outlet />
