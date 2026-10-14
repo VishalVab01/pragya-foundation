@@ -162,6 +162,7 @@ html body .site-header.shell{width:min(1120px,calc(100% - 40px))}
 html body .site-header .nav{gap:14px}
 .nav-contact-actions{display:flex;align-items:center;gap:14px;margin-left:0}
 .nav-contact-item{position:relative;display:flex;align-items:center}
+.nav-contact-item:after{content:"";position:absolute;z-index:39;top:100%;left:-8px;right:-8px;height:14px}
 .nav-contact-label{padding:7px 0;border:0;background:none;color:#879297;font:600 15px/1 'Instrument Sans',sans-serif;white-space:nowrap;cursor:pointer;transition:color .18s ease}
 .nav-contact-label:hover,.nav-contact-item:focus-within>.nav-contact-label{color:var(--brand-red)}
 .nav-contact-icon{position:relative;display:grid;flex:none;width:30px;height:30px;padding:0;place-items:center;border:1px solid #e5e9e4;border-radius:50%;background:#fff;color:#48656e;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
@@ -189,6 +190,7 @@ html body .site-header .nav{gap:14px}
   .nav-contact-actions{justify-content:center;flex-wrap:wrap;gap:8px 17px;margin:8px 0 1px;padding-top:12px;border-top:1px solid #e8ece7}
   .nav-contact-label{padding:8px 0;font-size:13px}
   .nav-contact-tip{top:calc(100% + 8px)}
+  .nav-contact-item:after{height:10px}
 }
 @media(prefers-reduced-motion:reduce){.nav-contact-tip{transition:none}}
 /* The stand-for module follows the reference's oversized, looping ribbon carousel. */
