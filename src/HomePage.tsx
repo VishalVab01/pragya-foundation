@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState, type FormEvent } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { ArrowRight, ArrowUpRight, Check, Plus, Droplets, HeartPulse, Leaf, UsersRound } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,6 +16,7 @@ import awardMinister from './assets/award-minister.jpg';
 import childrenWelfareImage from './assets/children-welfare.jpg';
 import environmentImage from './assets/environment.jpg';
 import healthHygieneImage from './assets/health-hygiene.jpg';
+import { submitVolunteerForm, type SubmissionState } from './volunteerSubmission';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,6 +62,7 @@ const faqs = [
 export default function HomePage() {
   const [activeFocus, setActiveFocus] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [volunteerStatus, setVolunteerStatus] = useState<SubmissionState>('idle');
   const mainRef = useRef<HTMLElement>(null);
   const ribbonTextRefs = useRef<SVGTextPathElement[]>([]);
   useLayoutEffect(() => {
@@ -142,11 +144,6 @@ export default function HomePage() {
     requestAnimationFrame(() => ScrollTrigger.refresh());
     return () => context.revert();
   }, []);
-  function sendVolunteerEnquiry(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const body = [...new FormData(event.currentTarget).entries()].map(([key, value]) => `${key}: ${value}`).join('\n');
-    window.location.href = `mailto:pragyafoundation2024@gmail.com?subject=${encodeURIComponent('Volunteer enquiry')}&body=${encodeURIComponent(body)}`;
-  }
   return <main ref={mainRef} className="altruist-home" id="top">
     <section className="ah-hero">
       <img className="ah-hero-image" src={pragyaHero} alt="A Pragya Foundation worker sharing menstrual health supplies with schoolgirls" />
@@ -244,7 +241,7 @@ export default function HomePage() {
     <section className="ah-volunteer" id="volunteer">
       <img className="ah-volunteer-bg" src={altruistClouds} alt=""/>
       <div className="ah-volunteer-copy"><span className="ah-badge">Join Us</span><h2>Want to volunteer?</h2><p>Join Pragya Foundation in supporting women and children, advancing menstrual health, and building more sustainable communities.</p><ul><li><Check size={17}/> Support real causes that matter</li><li><Check size={17}/> Flexible ways to contribute your time</li><li><Check size={17}/> Work with local community initiatives</li></ul></div>
-      <form className="ah-volunteer-form" onSubmit={sendVolunteerEnquiry}><label className="wide">Full Name<input name="Full name" required placeholder="Your name"/></label><label>Email ID<input name="Email" required type="email" placeholder="you@example.com"/></label><label>Phone Number<input name="Mobile number" required type="tel" placeholder="+91"/></label><label className="wide">Location<select name="Current location" defaultValue="" required><option value="" disabled>Choose your location</option><option>Dehradun</option><option>Tehri Garhwal</option><option>Uttarkashi</option><option>Rudraprayag</option><option>Other</option></select></label><label className="wide">Message<textarea name="Message" rows={3} placeholder="How would you like to contribute?"/></label><button className="ah-button" type="submit">Submit <ArrowRight size={16}/></button></form>
+      <form className="ah-volunteer-form" onSubmit={(event) => void submitVolunteerForm(event, setVolunteerStatus)}><label className="wide">Full Name<input name="Full name" required placeholder="Your name"/></label><label>Email ID<input name="Email" required type="email" placeholder="you@example.com"/></label><label>Phone Number<input name="Mobile number" required type="tel" placeholder="+91"/></label><label className="wide">Location<select name="Current location" defaultValue="" required><option value="" disabled>Choose your location</option><option>Dehradun</option><option>Tehri Garhwal</option><option>Uttarkashi</option><option>Rudraprayag</option><option>Other</option></select></label><label className="wide">Message<textarea name="Message" rows={3} placeholder="How would you like to contribute?"/></label><button className="ah-button" type="submit" disabled={volunteerStatus === 'submitting'}>{volunteerStatus === 'submitting' ? 'Submitting…' : 'Submit'} <ArrowRight size={16}/></button><p className="form-status" role="status" aria-live="polite">{volunteerStatus === 'success' ? 'Thank you. Your volunteer enquiry has been submitted.' : volunteerStatus === 'error' ? 'We could not submit your enquiry. Please try again or email pragyafoundation2024@gmail.com.' : ''}</p></form>
       <svg className="ah-volunteer-ribbon ah-volunteer-ribbon-desktop" viewBox="0 0 1920 300" preserveAspectRatio="none">
         <defs><path id="pragya-volunteer-wave-desktop" d={volunteerWavePath}/></defs>
         <path className="ah-wave-band" d={volunteerWavePath}/>
